@@ -10,11 +10,15 @@
             - "Right" : Exaggerat the right content
             - "Left" : Exaggerat the Left content
         - "SplitFour" : Splits content into four horizontal section. Vertical on mobile
+            - "InnerSpace" : Spaces the items vertically inside each section
+        - "SplitGallery" : Splits content into a stylised gallery. Used currently for "News" section
         
     - "BrandFont" : Text Styling. Can be used on parent <p>/<h1> etc or <span class="BrandFont Centre"> for text within a BrandFont tag
         - "Centre" : Aligns text to the centre
         - "Bold" : Makes text bold
         - JDColours : Changes text colour to brand colours
+        - "Narrow" : Narrows and linebreaks text relative to the screen
+        - "RelativeNarrow" : Narrows and linebreaks text relative to the parent
 
     - "Button" : Turn an <a> into a button
         - "Centre" : Aligns button to the centre
@@ -24,8 +28,11 @@
 >JDColours:
     - "JDRed"
     - "JDBlue"
-    - "JDRed"
-    - "JDBlue"
+    - "JDTeal"
+    - "JDOrange"
+    - "JDGreen"
+    - "JDYellow"
+    - "JDPink"
 */
 
 :root
@@ -145,14 +152,12 @@ body
             height: 100%;
             padding: 0;
         }
-
         /* Right-heavy Content Grid - "SplitRight"*/
             .BlockContent.SplitTwo 
             {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr;
-                grid-column-gap: 0px;
+                grid-template-columns: repeat(2, 1fr);;
+
                 grid-row-gap: 0px;
             }
                 .BlockContent.SplitTwo.Right
@@ -167,9 +172,7 @@ body
                 {
                     .BlockContent.SplitTwo 
                     {
-                        display: grid;
-                        grid-column-gap: 0px;
-                        grid-row-gap: 01vh;
+                        grid-row-gap: 1vh;
                     }
                         .BlockContent.SplitTwo.Right
                         {
@@ -181,17 +184,17 @@ body
             .BlockContent.SplitFour 
             {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: repeat(4, 1fr);
                 height: auto;
             }
                 .BlockContent.SplitFour > div
                 {
                     margin: 0 auto;
                 }
-                    .BlockContent.SplitFour.Three > div 
+                    .BlockContent.SplitFour.InnerSpace > div 
                     {
                         display: grid; 
-                        grid-template-rows: 1fr 1fr 1fr;
+                        grid-auto-rows: 1fr;
                         gap: 3vh 0vh; 
 
                         align-items: center;
@@ -203,20 +206,19 @@ body
                     .BlockContent.SplitFour 
                     {
                         grid-template-columns: 1fr;
-                        grid-template-rows: 1fr 1fr 1fr 1fr;
+                        grid-template-rows: repeat(4, 1fr);;
                         grid-row-gap: 6vh;
                     }
-                        .BlockContent.SplitFour.Three > div 
+                        .BlockContent.SplitFour.InnerSpace > div 
                         {
                             gap: 0vh; 
 
                             align-items: center;
                             justify-items: center;
                         }
-
                 }
 
-        /* Gallery styled split - "SplitGallery"*/
+        /* Gallery styled split - "SplitGallery" */
             .BlockContent.SplitGallery 
             {
                 display: grid;
@@ -224,6 +226,11 @@ body
                 grid-template-rows: repeat(2, 1fr);
                 grid-column-gap: 1vh;
                 grid-row-gap: 1vh;
+
+                grid-template-areas: 
+                "Area1 Area2 Area4 Area4"
+                "Area1 Area3 Area4 Area4"; 
+
                 height: 60vh;
             }
                 .BlockContent.SplitGallery > div
@@ -232,49 +239,37 @@ body
                     background-position: center !important;
                     display: flex;
                 }
-                .BlockContent.SplitGallery > div:nth-child(1)
-                {
-                    grid-area: 1 / 1 / 3 / 2;
-                }
-                .BlockContent.SplitGallery > div:nth-child(2)
-                {
-                    grid-area: 1 / 2 / 2 / 3;
-                }
-                .BlockContent.SplitGallery > div:nth-child(3)
-                {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-                .BlockContent.SplitGallery > div:nth-child(4) 
-                {
-                    grid-area: 1 / 3 / 3 / 5;
-                }
+                    .BlockContent.SplitGallery > div:nth-child(1)
+                    {
+                        grid-area: Area1;
+                    }
+                    .BlockContent.SplitGallery > div:nth-child(2)
+                    {
+                        grid-area: Area2;
+                    }
+                    .BlockContent.SplitGallery > div:nth-child(3)
+                    {
+                        grid-area: Area3;
+                    }
+                    .BlockContent.SplitGallery > div:nth-child(4) 
+                    {
+                        grid-area: Area4;
+                    }
                     @media (max-width: 1099px)
                     {
                         .BlockContent.SplitGallery 
                         {
-                            display: grid;
                             grid-template-columns: repeat(2, 1fr);
                             grid-template-rows: repeat(4, 1fr);
-                            grid-column-gap: 1vh;
-                            grid-row-gap: 1vh;
+
+                            grid-template-areas: 
+                            "Area1 Area2"
+                            "Area1 Area3"
+                            "Area4 Area4"
+                            "Area4 Area4"; 
+
                             height: auto;
                         }
-                            .BlockContent.SplitGallery > div:nth-child(1)
-                            { 
-                                grid-area: 1 / 1 / 3 / 2;
-                            }
-                            .BlockContent.SplitGallery > div:nth-child(2)
-                            { 
-                                grid-area: 1 / 2 / 2 / 3;
-                            }
-                            .BlockContent.SplitGallery > div:nth-child(3)
-                            { 
-                                grid-area: 2 / 2 / 3 / 3;
-                            }
-                            .BlockContent.SplitGallery > div:nth-child(4)
-                            { 
-                                grid-area: 3 / 1 / 5 / 3;
-                            }
                     }
                     
 
@@ -291,6 +286,18 @@ body
             .BrandFont.Bold
             {
                 font-weight: 600;
+            }
+            .BrandFont.Narrow
+            {
+                width: 50vh;
+            }
+            .BrandFont.RelativeNarrow
+            {
+                width: 65%;
+            }
+            .BrandFont.PadBottom
+            {
+                padding-bottom: 5vh;
             }
 
     /* Font Colour Setters */
@@ -374,17 +381,9 @@ body
         flex-direction: column;
         justify-content: center;
     }
-    /* Narrow the width. Used for multi line titles */
-    .Narrow
-    {
-        width: 50vh;
-    }
-    .RelativeNarrow
-    {
-        width: 65%;
-    }
 
 
+/* Add an empty div to mask over a background image inside other div - Just in testing */
     .BackgroundMask 
     {
         background: rgba(0, 0, 0, 0.5);
@@ -402,62 +401,3 @@ body
             background: rgba(var(--JDRed), 0.5);
             color: white;
         }
-
-
-
-/*
-    <div class="Carousel">
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-        </div>
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-        </div>
-    </div>
-*/
-        .Carousel
-        {
-            width: 100%;
-            overflow-x: hidden;
-            
-            display: flex;
-        }
-            .Carousel > div
-            {
-                min-width: 100%;
-
-                display: grid; 
-                grid-template-columns: repeat(6, 1fr);
-                    
-                animation: 15s scrollingImg linear infinite;
-            }
-                .Carousel > div > div:nth-child(odd)
-                {
-                    background-color: lightgreen;
-                }
-                .Carousel > div > div:nth-child(even)
-                {
-
-                    background-color: lightcoral;
-                }
-                    @keyframes scrollingImg
-                    {
-                        0% 
-                        {
-                            transform: translateX(0%);
-                        }
-                        100% 
-                        {
-                            transform: translateX(-100%);
-                        }
-                    }
