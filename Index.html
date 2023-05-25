@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Digital Limited</title>
+
+    <!-- Specific CSS -->
+        <link rel="stylesheet" href="Style/IntroAnimation.css">
+
+    <!-- REQUIRED ON EVERY PAGE -->
+        <!-- Site Wide Script -->
+            <script src="Scripts/SiteScript.js"></script>
+        <!-- Site Wide CSS -->
+            <link rel="stylesheet" href="Style/SiteStyle.css">
+            <link rel="stylesheet" href="Style/BlockSystem.css">
+        <!-- Google Fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body> 
+
+    <!-- Nav Banner -->
+    <header id="NavBanner" class='NavBanner'>
+        <img class="NavLogo" src="Assets/JD_blue_map_MASTER.svg" alt="Just Digital Logo">
+        <div id="mobiNavBtn" class="mobiNavBtn" onclick="mobileDropDown()">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div id="NavItemContainer" class="NavItemContainer">
+            <a class="NavItem" href="">
+                link 1
+            </a>
+            <a class="NavItem" href="">
+                link 2
+            </a>
+            <a class="NavItem" href="">
+                link 3
+            </a>
+            <a class="NavItem" href="">
+                link 4
+            </a>
+        </div>
+    </header>
+
+
+    <!-- HeadBlock -->
+    <div class="Block Fullscreen Head JDBlue">
+        <!-- IntroAnimation -->
+        <div id="AnimationMaster">
+            <div id="RingMaster"></div>
+            <div id="mainItems">
+                <h1 class="BrandFont Centre Narrow" >
+                    <span>Take your </span>
+                    <span class="BrandFont Bold JDRed">Brand </span>
+                    <span>to the </span>
+                    <span class="BrandFont Bold">next level.</span>
+                </h1>
+                    <br>
+                <h2 class="BrandFont Centre" >
+                    <span>We are a team of </span>
+                    <span class="BrandFont Bold JDRed">friendly, dynamic</span>
+                    <span> and</span><br>
+                    <span class="BrandFont Bold JDRed">resourceful experts</span>
+                    <span> exited to help</span><br>
+                    <span>elevate your breand.</span>
+                </h2>
+                    <br>
+                <a href="" class="Button JDRed LateFade">
+                    Get in touch
+                </a>
+            </div>
+    
+            <div class="DotHolder">
+                <div id="Dot1Main"></div>
+            </div>
+            <div class="DotHolder">
+                <div id="Dot2Main"></div>
+            </div>
+            <div class="DotHolder">
+                <div id="Dot3Main"></div>
+            </div>
+            <div class="DotHolder">
+                <div id="Dot4Main"></div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- We are thinkers and do-ers -->
+    <div class="Block Halfscreen">
+        <div class="BlockContent SplitTwo Right">
+            <div class="Middle">
+                <h1 class="BrandFont Narrow">
+                    <span>We are</span>
+                    <span class="BrandFont Bold JDRed">thinkers</span>
+                    <span>and </span>
+                    <span class="BrandFont Bold JDRed">do-ers</span>
+                </h1>
+            </div>
+            <div class="Middle">
+                <p class="BrandFont Bold">We thrive on helping you do away with the strain of managing multiple service providers by housing it all here, in one place at our premises in central Cambridgeshire.</p>
+                <p>Each service under one roof is the secret to our client's success. A fully managed, end-to-end service empowers our talented teams to work coherently and efficiently to deliver your projects.</p> 
+                <p>For 20 years, we have been supporting and enhancing national businesses from streamlining marketing processes, creating beautiful graphic designs, providing first-class print and exhibitions equipment as well as supplying a storage and delivery service.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Explore departments -->
+    <div class="Block Halfscreen JDBlue Middle">
+        <div class="BlockContent SplitFour Three">
+            <div class="RelativeNarrow BrandFont Centre">
+                <img src="Assets/MSRing@200x.png" style="height: 10vh;" alt="Marketing Services Ring">
+                <p>A full range of marketing services to support your business.</p>
+                <a href="" class="Button JDRed">Expore Marketing</a>
+            </div>
+            <div class="RelativeNarrow BrandFont Centre">
+                <img src="Assets/ERing@200x.png" style="height: 10vh;" alt="Education Ring">
+                <p>No text yet.</p>
+                <a href="" class="Button JDRed">Expore Education</a>
+            </div>
+            <div class="RelativeNarrow BrandFont Centre">
+                <img src="Assets/PRing@200x.png" style="height: 10vh;" alt="Pets Ring">
+                <p>No text yet.</p>
+                <a href="" class="Button JDRed">Expore Pets</a>
+            </div>
+            <div class="RelativeNarrow BrandFont Centre">
+                <img src="Assets/GSRing@200x.png" style="height: 10vh;" alt="Graphic Services Ring">
+                <p>A carefully-tailored design and product service for the sentiment industry.</p>
+                <a href="" class="Button JDRed">Expore Graphic Services</a>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- "News" -->
+    <div class="Block Middle">
+        <h1 class="BrandFont JDRed Centre">Latest <span class="BrandFont Bold">news</span></h2>
+            <br>
+        <div class="BlockContent SplitGallery">
+            <div style="background: url(Assets/pexels-fauxels-3184292.jpg);">
+                <div class="BackgroundMask JDBlue">
+                    <br><h2 class="BrandFont Bold Centre JDOrange">Headline</h2>
+                    <p class="BrandFont Centre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iure expedita distinctio ut. Nobis eaque iste quos aliquam cum sapiente atque in facere excepturi. Architecto maxime quo ipsam, iure ipsum aspernatur accusamus! Odit fugiat repudiandae possimus tempore doloremque error sit?</p>
+                    <br><a href="" class="Button JDClear Bold">Read More</a>
+                </div>
+            </div>
+            <div style="background: url(Assets/pexels-fauxels-3184292.jpg);">
+                <div class="BackgroundMask JDBlue">
+                    <br><h2 class="BrandFont Bold Centre JDGreen">Headline</h2>
+                    <p class="BrandFont Centre">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br><a href="" class="Button JDClear Bold">Read More</a>
+                </div>
+            </div>
+            <div style="background: url(Assets/pexels-fauxels-3184292.jpg);">
+                <div class="BackgroundMask JDBlue">
+                    <br><h2 class="BrandFont Bold Centre JDPink">Headline</h2>
+                    <p class="BrandFont Centre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid.</p>
+                    <br><a href="" class="Button JDClear Bold">Read More</a>
+                </div>
+            </div>
+            <div style="background: url(Assets/pexels-fauxels-3184292.jpg);">
+                <div class="BackgroundMask JDBlue">
+                    <br><h2 class="BrandFont Bold Centre JDYellow">Headline</h2>
+                    <p class="BrandFont Centre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia libero eum dignissimos saepe aut itaque voluptatum reprehenderit fugiat, nesciunt deserunt eveniet odio, earum incidunt, rem enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod deleniti repudiandae illum labore nobis placeat eos consectetur debitis ab officia.</p>
+                    <br><a href="" class="Button JDClear Bold">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trusted By -->
+    <div class="Block">
+        <h1 class="BrandFont Centre">Trusted by</h1>
+        <div class="BlockContent">
+            
+        </div>
+    </div>
+    
+</body>
+</html>

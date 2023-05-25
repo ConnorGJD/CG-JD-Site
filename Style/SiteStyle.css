@@ -1,0 +1,188 @@
+/* Desktop */
+@media (min-width: 1100px) 
+{
+    h1
+    {
+        font-size: 7vh;
+        margin: 0;
+    }
+    h2
+    {
+        font-size: 5vh;
+        margin: 0;
+    }
+    p,a
+    {
+        font-size: 2vh;
+        margin: 0;
+    }
+
+    .NavBanner
+    {
+        position: fixed;
+        z-index: 1000;
+
+        width: 100%;
+        height: 10vh;
+        background-color: white;
+        
+        display: flex;
+        align-items: center;
+
+        transition: top 0.4s;
+    }
+        .NavLogo
+        {
+            position: absolute;
+            left: 5vw;
+            height: 5vh;
+        }
+        .NavItemContainer
+        {
+            position: absolute;
+            right: 5vw;
+
+            height: 10vh;
+            
+            display: flex;
+            align-items: center;
+        }
+            .NavItem
+            {
+                height: 100%;
+                min-width: 10vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: rgb(var(--JDBlue));
+                text-decoration: none;
+                font-weight: 400;
+            }
+                .NavItem:hover
+                {
+                    text-decoration: underline;
+                }
+
+    .mobiNavBtn
+    {
+        display: none;
+    }
+}
+
+
+/* Mobile View */
+@media (max-width: 1099px) 
+{
+    h1
+    {
+        font-size: 6vw;
+    }
+    h2
+    {
+        font-size: 4vw;
+    }
+    p,a
+    {
+        font-size: 3vw;
+    }
+
+    .NavBanner
+    {
+        position: fixed;
+        z-index: 1000;
+
+        width: 100%;
+        height: 10vh;
+        background-color: white;
+        
+        display: flex;
+        align-items: center;
+    }
+        .NavLogo
+        {
+            position: absolute;
+            left: 5vw;
+            height: 5vh;
+        }
+        .NavItemContainer
+        {
+            display: block;
+            position: absolute;
+            
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.95);
+
+            top: 10vh;
+            width: 100%;
+            height: 0vh;
+            
+            transition: height 1s;
+        }
+            .NavItem
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: rgb(var(--JDBlue));
+                text-decoration: none;
+                font-weight: 400;
+                font-size: 4vh !important;
+
+                height: 15vh;
+                width: 100%;
+            }
+                .NavItem:hover
+                {
+                    text-decoration: underline;
+                }
+
+    /* Mobile "Hamburger" Button */
+    .mobiNavBtn
+    {    
+        z-index: 4;    
+        position: absolute;
+        right: 5vw;
+    }
+        /* Mobile Button Style */
+        .mobiNavBtn p
+        {    
+            background-color: rgb(var(--JDBlue));
+            border: 0.3vh solid white;
+
+            width: 4.5vh;
+            height: 0.8vh;
+
+            display: block;
+            margin-left: auto; 
+            margin-right: 0;
+
+            margin: 0 0 0 auto;
+            transition: width 1s;
+        }
+
+    /* Open. Change the style */
+    .mobiNavBtn.open p:first-of-type
+    {   
+        background-color: rgb(var(--JDRed));
+        width: 4.5vh;
+    }
+    .mobiNavBtn.open p
+    {   
+        background-color: rgb(var(--JDRed));
+        width: 5.1vh;
+    }
+    .mobiNavBtn.open p:last-of-type
+    {   
+        background-color: rgb(var(--JDRed));
+        width: 5.7vh;
+    }
+        .NavItemContainer.open
+        {
+            display: block;
+
+            height: 90vh;
+        }
+}

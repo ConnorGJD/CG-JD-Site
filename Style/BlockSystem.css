@@ -1,0 +1,477 @@
+/*
+>Main Types (with unique Modifiers):
+    - "Block" : A section of the page. Covers 100% of the screens width. Use "BlockContent" for content within a block
+        - "Fullscreen" : Sets the block height to match the screens height. Respected by mobile 
+        - "Halfscreen" : Sets the block height to match half the screens height. Disregarded on mobile 
+        - JDColours : Changes background colour to brand colours
+
+    - "BlockContent" : Content sections within Block. The content fills 80% of the screens width
+        - "SplitTwo" : Splits content into two halfs. Vertical on mobile
+            - "Right" : Exaggerat the right content
+            - "Left" : Exaggerat the Left content
+        - "SplitFour" : Splits content into four horizontal section. Vertical on mobile
+        
+    - "BrandFont" : Text Styling. Can be used on parent <p>/<h1> etc or <span class="BrandFont Centre"> for text within a BrandFont tag
+        - "Centre" : Aligns text to the centre
+        - "Bold" : Makes text bold
+        - JDColours : Changes text colour to brand colours
+
+    - "Button" : Turn an <a> into a button
+        - "Centre" : Aligns button to the centre
+        - JDColours : Changes text colour to brand colours
+
+
+>JDColours:
+    - "JDRed"
+    - "JDBlue"
+    - "JDRed"
+    - "JDBlue"
+*/
+
+:root
+{
+    --JDBlue: 31, 68, 101;
+    --JDRed: 228, 0, 58;
+    --JDTeal: 102, 193, 191;
+    --JDOrange: 243, 146, 0;
+    --JDGreen: 200, 212, 0;
+    --JDYellow: 255, 237, 0;
+    --JDPink: 237, 110, 167;
+}
+body
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page */
+    /* Block Styling - Desktop */
+        .Block
+        {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 8vh 0;
+        }
+            .Block.Fullscreen
+            {
+                height: 100vh;
+                padding:0;
+            }
+                .Block.Fullscreen.Head /* For first fullscreen block to account for the banner*/
+                {
+                    padding-top: 10vh;
+                    height: 90vh;
+                }
+            .Block.Halfscreen
+            {
+                height: 50vh;
+                padding: 0;
+            }
+    /* Block Styling - Mobile */
+    @media (max-width: 1099px) 
+    {
+        .Block
+        {
+            overflow: hidden;
+            position: relative;
+            padding: 8vh 0;
+        }
+            .Block.Fullscreen
+            {
+                width: 100%;
+                height: 100vh;
+                padding: 0;
+            }
+                .Block.Fullscreen.Head
+                {
+                    padding-top: 10vh;
+                    height: 90vh;
+                }
+            
+            .Block.Halfscreen
+            {
+                height: unset;
+                padding: 8vh 0;
+            }
+    }
+
+    /* Block Colour Setters */
+        .Block.JDBlue
+        {
+            background-color: rgb(var(--JDBlue));
+            color: white;
+        }
+        .Block.JDRed
+        {
+            background-color: rgb(var(--JDRed));
+            color: white;
+        }
+        .Block.JDTeal
+        {
+            background-color: rgb(var(--JDTeal));
+            color: white;
+        }
+        .Block.JDOrange
+        {
+            background-color: rgb(var(--JDOrange));
+            color: black;
+        }
+        .Block.JDGreen
+        {
+            background-color: rgb(var(--JDGreen));
+            color: black;
+        }
+        .Block.JDYellow
+        {
+            background-color: rgb(var(--JDYellow));
+            color: black;
+        }
+        .Block.JDPink
+        {
+            background-color: rgb(var(--JDPink));
+            color: white;
+        }
+
+
+/* Content */
+    /* Block basics*/
+        .BlockContent
+        {
+            width: 80vw;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0;
+        }
+
+        /* Right-heavy Content Grid - "SplitRight"*/
+            .BlockContent.SplitTwo 
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+            }
+                .BlockContent.SplitTwo > div:nth-child(1)
+                { 
+                    grid-area: 1 / 1 / 2 / 2;
+
+                }
+                .BlockContent.SplitTwo > div:nth-child(2)
+                { 
+                    grid-area: 1 / 2 / 2 / 3; 
+                }
+                    .BlockContent.SplitTwo.Right
+                    {
+                        grid-template-columns: 0.75fr 1.25fr;
+                    }
+                    .BlockContent.SplitTwo.Left
+                    {
+                        grid-template-columns: 1.25fr  0.75fr;
+                    }
+                    @media (max-width: 1099px)
+                    {
+                        .BlockContent.SplitTwo 
+                        {
+                            display: grid;
+                            grid-column-gap: 0px;
+                            grid-row-gap: 01vh;
+                        }
+                            .BlockContent.SplitTwo > div:nth-child(1)
+                            { 
+                                grid-area: 1 / 1 / 2 / 2;
+
+                            }
+                            .BlockContent.SplitTwo > div:nth-child(2)
+                            { 
+                                grid-area: 2 / 1 / 3 / 2;
+                            }
+                                .BlockContent.SplitTwo.Right
+                                {
+                                    grid-template-columns: 1fr;
+                                }
+                    }
+
+        /* Fourway split - "SplitFour"*/
+            .BlockContent.SplitFour 
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+                height: auto;
+            }
+                .BlockContent.SplitFour > div
+                {
+                    margin: 0 auto;
+                }
+                .BlockContent.SplitFour > div:nth-child(1)
+                { 
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+                .BlockContent.SplitFour > div:nth-child(2)
+                { 
+                    grid-area: 1 / 2 / 2 / 3;
+                }
+                .BlockContent.SplitFour > div:nth-child(3)
+                { 
+                    grid-area: 1 / 3 / 2 / 4;
+                }
+                .BlockContent.SplitFour > div:nth-child(4)
+                { 
+                    grid-area: 1 / 4 / 2 / 5;
+                }
+                    .BlockContent.SplitFour.Three > div {
+                        display: grid; 
+                        grid-auto-columns: 1fr; 
+                        grid-template-columns: 1fr; 
+                        gap: 3vh 0vh; 
+                        grid-template-areas: 
+                        "SplitFourThree1"
+                        "SplitFourThree2"
+                        "SplitFourThree3";
+
+                        align-items: center;
+                        justify-items: center;
+                    }
+                        .BlockContent.SplitFour.Three > div >*:nth-child(1)
+                        { 
+                            grid-area: SplitFourThree1;
+                        }
+                        .BlockContent.SplitFour.Three > div >*:nth-child(2)
+                        { 
+                            grid-area: SplitFourThree2;
+                        }
+                        .BlockContent.SplitFour.Three > div >*:nth-child(3)
+                        { 
+                            grid-area: SplitFourThree3;
+                        }
+
+                @media (max-width: 1099px)
+                {
+                    .BlockContent.SplitFour 
+                    {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr 1fr 1fr 1fr;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 4vh;
+                    }
+                        .BlockContent.SplitFour > div:nth-child(1)
+                        { 
+                            grid-area: 1 / 1 / 2 / 2;
+                            margin: 0 auto;
+                        }
+                        .BlockContent.SplitFour > div:nth-child(2)
+                        { 
+                            grid-area: 2 / 1 / 3 / 2;
+                            margin: 0 auto;
+                        }
+                        .BlockContent.SplitFour > div:nth-child(3)
+                        { 
+                            grid-area: 3 / 1 / 4 / 2;
+                            margin: 0 auto;
+                        }
+                        .BlockContent.SplitFour > div:nth-child(4)
+                        { 
+                            grid-area: 4 / 1 / 5 / 2;
+                            margin: 0 auto;
+                        }
+                }
+
+        /* Gallery styled split - "SplitGallery"*/
+            .BlockContent.SplitGallery 
+            {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 1vh;
+                grid-row-gap: 1vh;
+                height: 60vh;
+            }
+                .BlockContent.SplitGallery > div:nth-child(1)
+                {
+                    grid-area: 1 / 1 / 3 / 2;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    display: flex;
+                }
+                .BlockContent.SplitGallery > div:nth-child(2)
+                {
+                    grid-area: 1 / 2 / 2 / 3;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    display: flex;
+                }
+                .BlockContent.SplitGallery > div:nth-child(3)
+                {
+                    grid-area: 2 / 2 / 3 / 3;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    display: flex;
+                }
+                .BlockContent.SplitGallery > div:nth-child(4) 
+                {
+                    grid-area: 1 / 3 / 3 / 5;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    display: flex;
+                }
+                    @media (max-width: 1099px)
+                    {
+                        .BlockContent.SplitGallery 
+                        {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-rows: repeat(4, 1fr);
+                            grid-column-gap: 1vh;
+                            grid-row-gap: 1vh;
+                            height: 60vh;
+                        }
+                            .BlockContent.SplitGallery > div:nth-child(1)
+                            { 
+                                grid-area: 1 / 1 / 3 / 2;
+                            }
+                            .BlockContent.SplitGallery > div:nth-child(2)
+                            { 
+                                grid-area: 1 / 2 / 2 / 3;
+                            }
+                            .BlockContent.SplitGallery > div:nth-child(3)
+                            { 
+                                grid-area: 2 / 2 / 3 / 3;
+                            }
+                            .BlockContent.SplitGallery > div:nth-child(4)
+                            { 
+                                grid-area: 3 / 1 / 5 / 3;
+                            }
+                    }
+                    
+
+/* Text */
+    /* Fonts Styling */
+        .BrandFont
+        {
+            font-weight: 200;
+        }
+            .BrandFont.Centre
+            {
+                text-align: center;
+            }
+            .BrandFont.Bold
+            {
+                font-weight: 600;
+            }
+
+    /* Font Colour Setters */
+        .BrandFont.JDRed
+        {
+            color: rgb(var(--JDRed));
+        }
+        .BrandFont.JDBlue
+        {
+            color: rgb(var(--JDBlue));
+        }
+        .BrandFont.JDTeal
+        {
+            color: rgb(var(--JDTeal));
+        }
+        .BrandFont.JDOrange
+        {
+            color: rgb(var(--JDOrange));
+        }
+        .BrandFont.JDGreen
+        {
+            color: rgb(var(--JDGreen));
+        }
+        .BrandFont.JDYellow
+        {
+            color: rgb(var(--JDYellow));
+        }
+        .BrandFont.JDPink
+        {
+            color: rgb(var(--JDPink));
+        }
+
+
+/* Button */
+    /* Button Styling */
+        .Button
+        {
+            display: block;
+            position: relative;
+            z-index: 999;
+
+            min-width: 20vh;
+            min-height: 4vh;
+            padding: 0.85vh 1vh 0 1vh;
+
+            background: black;
+            color: white;
+            
+            text-align: center;
+            text-decoration: none;
+        }
+            .Button.Bold
+            {
+                font-weight: 600;
+            }
+            .Button.Centre
+            {
+                text-align: center;
+            }
+
+/* Font Colour Setters */
+    .Button.JDRed
+    {
+        background: rgb(var(--JDRed));
+    }
+    .Button.JDBlue
+    {
+        background: rgb(var(--JDBlue));
+    }
+    .Button.JDClear
+    {
+        background: transparent;
+    }
+
+
+/* Overrides */
+    /* Vertically aligns a group of content inside a block */
+    .Middle
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    /* Narrow the width. Used for multi line titles */
+    .Narrow
+    {
+        width: 50vh;
+    }
+    .RelativeNarrow
+    {
+        width: 65%;
+    }
+
+
+    .BackgroundMask 
+    {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        padding: 0 2vh;
+    }
+        .BackgroundMask.JDBlue
+        {
+            background: rgba(var(--JDBlue), 0.5);
+            color: white;
+        }
+        .BackgroundMask.JDRed
+        {
+            background: rgba(var(--JDRed), 0.5);
+            color: white;
+        }

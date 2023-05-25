@@ -1,0 +1,260 @@
+    :root
+    {
+        --introAnimSpeed: 3s;
+    }
+
+    /* Parent of the whole thing */
+    #AnimationMaster
+    {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Items that appear */
+    #mainItems 
+    {
+        position: absolute;
+        margin: auto;
+        clip-path: circle(0%);
+        animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.2s) RingReveal forwards;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        background: rgb(var(--JDBlue));
+    }
+    /* Ring that appears  */
+    #RingMaster
+    {
+        position: absolute;
+        background: rgb(var(--JDRed)); 
+        height: 100%; 
+        width: 100%;
+
+        clip-path: circle(0%);
+        animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.4s) RingReveal forwards;
+    }
+
+    /* Dots */
+    .DotHolder
+    {
+        position: absolute;
+        display: flex;
+    
+        width: 10vh;
+        height: 10vh;
+        animation: ease-in-out calc(var(--introAnimSpeed) * 2) DotHolderAnim forwards;
+    }
+    
+    #Dot1Main,
+    #Dot2Main,
+    #Dot3Main,
+    #Dot4Main
+    {
+        margin: auto;
+        position: relative;
+    
+        width: 2vh;
+        height: 2vh;
+        border-radius: 50%;
+    }
+    #Dot1Main
+    {
+        animation: ease-in-out var(--introAnimSpeed) Dot1Anim forwards;
+        background-color: rgb(245, 153, 32)
+    }
+    #Dot2Main
+    {
+        animation: ease-in-out var(--introAnimSpeed) Dot2Anim forwards;
+        background-color: rgb(115, 197, 195);
+    }
+    #Dot3Main
+    {
+        animation: ease-in-out var(--introAnimSpeed) Dot3Anim forwards;
+        background-color: rgb(0, 129, 189);
+    }
+    #Dot4Main
+    {
+        animation: ease-in-out var(--introAnimSpeed) Dot4Anim forwards;
+        background-color: rgb(var(--JDRed));
+    }
+
+    .LateFade
+    {
+        opacity: 0;
+        animation: ease-in-out 1s calc(var(--introAnimSpeed) + 1s) FadeIn forwards;
+    }
+    
+    
+    @keyframes DotHolderAnim
+    {
+        0% 
+        {
+            transform: rotate(0deg);
+        }
+        45% 
+        {
+            transform: rotate(360deg) scale(1);
+            opacity: 1;
+        }
+        50% 
+        {
+            transform: rotate(0deg) scale(0);
+            opacity: 0;
+        }
+        100% 
+        {
+            transform: scale(0);
+        }
+    }
+    
+    
+    @keyframes Dot1Anim
+    {
+        0% 
+        {
+            left: 0px;
+        }
+        18%
+        {
+            height: 2vh;
+        }
+        50% 
+        {
+            left: -10vh;
+        }
+        60%
+        {
+            height: 4vh;
+        }
+        80%
+        {
+            height: 2vh;
+        }
+        100% 
+        {
+            left: 0px;
+            height: 2vh;
+        }
+    }
+    
+    @keyframes Dot2Anim
+    {
+        0% 
+        {
+            top: 0px;
+        }
+        18%
+        {
+            width: 2vh;
+        }
+        50% 
+        {
+            top: -10vh;
+        }
+        60%
+        {
+            width: 4vh;
+        }
+        80%
+        {
+            width: 2vh;
+        }
+        100% 
+        {
+            top: 0px;
+            width: 2vh;
+        }
+    }
+    
+    @keyframes Dot3Anim
+    {
+        0% 
+        {
+            right: 0;
+        }
+        18%
+        {
+            height: 2vh;
+        }
+        50% 
+        {
+            right: -10vh;
+        }
+        60%
+        {
+            height: 4vh;
+        }
+        80%
+        {
+            height: 2vh;
+        }
+        100% 
+        {
+            right: 0;
+            height: 2vh;
+        }
+    }
+    
+    @keyframes Dot4Anim
+    {
+        0% 
+        {
+            bottom: 0;
+        }
+        18%
+        {
+            width: 2vh;
+        }
+        50% 
+        {
+            bottom: -10vh;
+        }
+        60%
+        {
+            width: 4vh;
+        }
+        80%
+        {
+            width: 2vh;
+        }
+        100% 
+        {
+            bottom: 0;
+            width: 2vh;
+        }
+    }    
+    
+
+    @keyframes RingReveal
+    {
+        0% 
+        {
+            clip-path: circle(0%);
+        }
+        100% 
+        {
+            clip-path: circle(100vw);
+        }
+    }
+
+    @keyframes FadeIn
+    {
+        0% 
+        {
+            opacity: 0;
+            transform: translateY(3vh);
+        }
+        100% 
+        {
+            opacity: 1;
+            transform: translateY(0vh);
+        }
+    }
