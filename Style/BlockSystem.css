@@ -3,7 +3,7 @@
     - "Block" : A section of the page. Covers 100% of the screens width. Use "BlockContent" for content within a block
         - "Fullscreen" : Sets the block height to match the screens height. Respected by mobile 
         - "Halfscreen" : Sets the block height to match half the screens height. Disregarded on mobile 
-        - JDColours : Changes background colour to brand colours
+        > JDColours : Changes background colour to brand colours
 
     - "BlockContent" : Content sections within Block. The content fills 80% of the screens width
         - "SplitTwo" : Splits content into two halfs. Vertical on mobile
@@ -16,13 +16,15 @@
     - "BrandFont" : Text Styling. Can be used on parent <p>/<h1> etc or <span class="BrandFont Centre"> for text within a BrandFont tag
         - "Centre" : Aligns text to the centre
         - "Bold" : Makes text bold
-        - JDColours : Changes text colour to brand colours
+        > JDColours : Changes text colour to brand colours
         - "Narrow" : Narrows and linebreaks text relative to the screen
         - "RelativeNarrow" : Narrows and linebreaks text relative to the parent
+        > PadDirections : Adds padding to text. Useful for titles
 
-    - "Button" : Turn an <a> into a button
+    - "Button" : Turn an <a> into a button or styles an Input button
+        - "Bold" : Makes text bold
         - "Centre" : Aligns button to the centre
-        - JDColours : Changes text colour to brand colours
+        > JDColours : Changes text colour to brand colours
 
 
 >JDColours:
@@ -33,6 +35,14 @@
     - "JDGreen"
     - "JDYellow"
     - "JDPink"
+    - "JDClear"
+
+>PadDirections:
+    - "PadTop"
+    - "PadRight"
+    - "PadBottom"
+    - "PadLeft"
+    - "PadSides"
 */
 
 :root
@@ -299,10 +309,24 @@ body
             {
                 width: 65%;
             }
-            .BrandFont.PadBottom
-            {
-                padding-bottom: 5vh;
-            }
+                .BrandFont.PadTop
+                {
+                    padding-Top: 5vh;
+                }
+                .BrandFont.PadRight,
+                .BrandFont.PadSides
+                {
+                    padding-Right: 5vh;
+                }
+                .BrandFont.PadBottom
+                {
+                    padding-bottom: 5vh;
+                }
+                .BrandFont.PadLeft,
+                .BrandFont.PadSides
+                {
+                    padding-Left: 5vh;
+                }
 
     /* Font Colour Setters */
         .BrandFont.JDRed
@@ -343,7 +367,6 @@ body
             position: relative;
             z-index: 999;
 
-
             min-width: 20vh;
             min-height: 4vh;
             padding: 0.85vh 1vh 0 1vh;
@@ -353,8 +376,11 @@ body
             
             text-align: center;
             text-decoration: none;
+
+            transition: transform 0.4s;
         }
-            input.Button /*Is a REAL button*/
+            input.Button, /*Is a REAL button*/
+            button.Button
             {
                 font-family: 'Poppins', sans-serif;
                 font-size: 2vh;
@@ -364,7 +390,8 @@ body
                 border: none;
                 cursor: pointer;
             }
-                input.Button.Centre
+                input.Button.Centre,
+                button.Button.Centre
                 {
                     margin: auto;
                 }
@@ -375,7 +402,11 @@ body
             .Button.Centre
             {
                 text-align: center;
-            }    
+            }
+        .Button:hover
+        {
+            transform: scale(1.1);
+        }   
                 
 
 /* Font Colour Setters */

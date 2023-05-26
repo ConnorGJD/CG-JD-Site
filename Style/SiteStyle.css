@@ -31,9 +31,10 @@
         color: rgb(var(--JDBlue));
         padding: 0 1.5vh;
     }
-        input[type="text"]:focus, input:focus
+        input[type="text"]:focus,
+        input:focus
         {
-            outline: 0.3vh solid red;
+            outline: 0.3vh solid rgb(var(--JDRed));
         }
 
     header
