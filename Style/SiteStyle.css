@@ -1,96 +1,126 @@
-/* Desktop */
-@media (min-width: 1100px) 
+/* Base Font Sizes */
+h1
 {
-    h1
+    font-size: 7vh;
+    margin: 0;
+}
+h2
+{
+    font-size: 5vh;
+    margin: 0;
+}
+h3
+{
+    font-size: 4.5vh;
+    margin: 0;
+}
+p,a
+{
+    font-size: 2vh;
+    margin: 0;
+}
+
+/* Input Styling */
+input[type="text"] 
+{
+    height: 4vh;
+    width: 100%;
+    border: 0.1vh solid rgb(var(--JDBlue));
+    font-size: 2.5vh;
+    color: rgb(var(--JDBlue));
+    padding: 0 1.5vh;
+}
+    input[type="text"]:focus,
+    input:focus
     {
-        font-size: 7vh;
-        margin: 0;
-    }
-    h2
-    {
-        font-size: 5vh;
-        margin: 0;
-    }
-    h3
-    {
-        font-size: 4.5vh;
-        margin: 0;
-    }
-    p,a
-    {
-        font-size: 2vh;
-        margin: 0;
+        outline: 0.3vh solid rgb(var(--JDRed));
     }
 
-    input[type="text"] 
+
+/* Site Heading banner */
+header
+{
+    position: fixed;
+    z-index: 1000;
+
+    width: 100%;
+    height: 10vh;
+    background-color: white;
+    
+    display: flex;
+    align-items: center;
+
+    transition: top 0.4s;
+}
+    .NavLogo
     {
-        height: 4vh;
-        width: 100%;
-        border: 0.1vh solid rgb(var(--JDBlue));
-        font-size: 2.5vh;
-        color: rgb(var(--JDBlue));
-        padding: 0 1.5vh;
+        position: absolute;
+        left: 5vw;
+        height: 5vh;
     }
-        input[type="text"]:focus,
-        input:focus
-        {
-            outline: 0.3vh solid rgb(var(--JDRed));
-        }
-
-    header
+    .NavItemContainer
     {
-        position: fixed;
-        z-index: 1000;
+        position: absolute;
+        right: 5vw;
 
-        width: 100%;
         height: 10vh;
-        background-color: white;
         
         display: flex;
         align-items: center;
-
-        transition: top 0.4s;
     }
-        .NavLogo
+        .NavItem
         {
-            position: absolute;
-            left: 5vw;
-            height: 5vh;
-        }
-        .NavItemContainer
-        {
-            position: absolute;
-            right: 5vw;
+            height: 100%;
+            min-width: 10vh;
 
-            height: 10vh;
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: rgb(var(--JDBlue));
+            text-decoration: none;
+            font-weight: 400;
+        }
+            .NavItem:hover
+            {
+                text-decoration: underline;
+            }
+
+
+/* Footer */
+footer
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    height: 16vh;
+    padding: 3vh 8vw;
+
+    background: rgb(var(--JDBlue));
+}
+    footer,
+    footer p,
+    footer a
+    {
+        color: white;
+        font-size: 1.5vh;
+        font-weight: 300;
+    }
+        footer > div
+        {
             display: flex;
             align-items: center;
         }
-            .NavItem
+            footer > div:nth-child(even)
             {
-                height: 100%;
-                min-width: 10vh;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                color: rgb(var(--JDBlue));
-                text-decoration: none;
-                font-weight: 400;
+                justify-content: flex-end;
             }
-                .NavItem:hover
-                {
-                    text-decoration: underline;
-                }
 
-    .mobiNavBtn
-    {
-        display: none;
-    }
+.mobiNavBtn
+{
+    display: none;
 }
-
 
 /* Mobile View */
 @media (max-width: 1099px) 
@@ -114,35 +144,21 @@
 
     header
     {
-        position: fixed;
-        z-index: 1000;
-
-        width: 100%;
-        height: 10vh;
-        background-color: white;
-        
-        display: flex;
-        align-items: center;
+        transition: none;
     }
-        .NavLogo
-        {
-            position: absolute;
-            left: 5vw;
-            height: 5vh;
-        }
         .NavItemContainer
         {
             display: block;
-            position: absolute;
             
             overflow-y: auto;
             -ms-overflow-style: none; /* Hide Scroll for Internet Explorer, Edge */
             scrollbar-width: none; /* Hide Scroll for Firefox */
             background-color: rgba(255, 255, 255, 0.95);
 
+            right: 0;
             top: 10vh;
-            width: 100%;
             height: 0vh;
+            width: 100%;
             
             transition: height 1s;
         }
@@ -152,10 +168,6 @@
         }
             .NavItem
             {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
                 color: rgb(var(--JDBlue));
                 text-decoration: none;
                 font-weight: 400;
@@ -215,4 +227,19 @@
 
             height: 90vh;
         }
+
+/* Footer */
+footer
+{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+
+    height: fit-content;
+    padding: 3vh 8vw;
+
+}
+    footer > div:nth-child(even)
+    {
+        justify-content: flex-start;
+    }
 }
