@@ -16,11 +16,11 @@
 
     /* Items that appear */
     #mainItems 
-    {
+    {        
         position: absolute;
         margin: auto;
-        clip-path: circle(0%);
-        animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.2s) RingReveal forwards;
+        
+
         width: 100%;
         height: 100%;
         display: flex;
@@ -29,6 +29,9 @@
         flex-direction: column;
 
         background: rgb(var(--JDBlue));
+
+        clip-path: circle(0%);
+        animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.2s) RingReveal forwards;
     }
     /* Ring that appears  */
     #RingMaster
@@ -50,6 +53,7 @@
     
         width: 10vh;
         height: 10vh;
+
         animation: ease-in-out calc(var(--introAnimSpeed) * 2) DotHolderAnim forwards;
     }
     
@@ -67,18 +71,19 @@
     }
     #Dot1Main
     {
+        background-color: rgb(var(--JDOrange));
         animation: ease-in-out var(--introAnimSpeed) Dot1Anim forwards;
-        background-color: rgb(245, 153, 32)
+        
     }
     #Dot2Main
     {
+        background-color: rgb(var(--JDTeal));
         animation: ease-in-out var(--introAnimSpeed) Dot2Anim forwards;
-        background-color: rgb(115, 197, 195);
     }
     #Dot3Main
     {
+        background-color: rgb(var(--JDLightBlue));
         animation: ease-in-out var(--introAnimSpeed) Dot3Anim forwards;
-        background-color: rgb(0, 129, 189);
     }
     #Dot4Main
     {
@@ -130,7 +135,7 @@
         }
         60%
         {
-            height: 4vh;
+            height: 3vh;
         }
         80%
         {
@@ -159,7 +164,7 @@
         }
         60%
         {
-            width: 4vh;
+            width: 3vh;
         }
         80%
         {
@@ -188,7 +193,7 @@
         }
         60%
         {
-            height: 4vh;
+            height: 3vh;
         }
         80%
         {
@@ -217,7 +222,7 @@
         }
         60%
         {
-            width: 4vh;
+            width: 3vh;
         }
         80%
         {

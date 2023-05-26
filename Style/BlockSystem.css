@@ -44,6 +44,7 @@
     --JDGreen: 200, 212, 0;
     --JDYellow: 255, 237, 0;
     --JDPink: 237, 110, 167;
+    --JDLightBlue: 0, 117, 181;
 }
 body
 {
@@ -156,9 +157,9 @@ body
             .BlockContent.SplitTwo 
             {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);;
-
-                grid-row-gap: 0px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 2vw;
+                grid-row-gap: 0vh;
             }
                 .BlockContent.SplitTwo.Right
                 {
@@ -174,7 +175,8 @@ body
                     {
                         grid-row-gap: 1vh;
                     }
-                        .BlockContent.SplitTwo.Right
+                        .BlockContent.SplitTwo.Right,
+                        .BlockContent.SplitTwo.Left
                         {
                             grid-template-columns: 1fr;
                         }
@@ -191,7 +193,7 @@ body
                 {
                     margin: 0 auto;
                 }
-                    .BlockContent.SplitFour.InnerSpace > div 
+                    .BlockContent.SplitFour.InnerSpace > div
                     {
                         display: grid; 
                         grid-auto-rows: 1fr;
@@ -373,33 +375,3 @@ body
     {
         background: transparent;
     }
-
-
-/* Overrides */
-    /* Vertically aligns a group of content inside a block */
-    .Middle
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-
-/* Add an empty div to mask over a background image inside other div - Just in testing */
-    .BackgroundMask 
-    {
-        background: rgba(0, 0, 0, 0.5);
-        height: 100%;
-        width: 100%;
-        padding: 0 2vh;
-    }
-        .BackgroundMask.JDBlue
-        {
-            background: rgba(var(--JDBlue), 0.5);
-            color: white;
-        }
-        .BackgroundMask.JDRed
-        {
-            background: rgba(var(--JDRed), 0.5);
-            color: white;
-        }

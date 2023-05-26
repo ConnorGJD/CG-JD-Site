@@ -1,11 +1,142 @@
+
 .Bubble
 {
     background-size: cover !important;
     background-position: center !important;
 
-    background-color: white;
+    background-color: rgb(238, 238, 238);
 
     height: 20vh;
     width: 20vh;
     border-radius: 50%;
 }
+
+
+/* Trusted by Carousel */
+.CarouselMask
+{
+    position: absolute;
+    margin: auto;
+    width: 80vw;
+    height: 20vh;
+    z-index: 10;
+    background: linear-gradient(to right, white 0% , transparent 10%, transparent 90%, white 100%);
+}
+.Carousel
+{
+    width: 100%;
+    overflow-x: hidden;
+
+    display: flex;
+    
+}
+    .Carousel > div
+    {
+        min-width: 100%;
+
+        display: grid; 
+        grid-template-columns: repeat(6, 1fr);
+
+        animation: 20s scrollingImg linear infinite;
+    }
+        .Carousel > div > div
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-size: cover !important;
+            background-position: center !important;
+
+            background-color: rgb(238, 238, 238);
+
+            height: 20vh;
+            width: 20vh;
+            border-radius: 50%;
+
+        }
+            @keyframes scrollingImg
+            {
+                0% 
+                {
+                    transform: translateX(0%);
+                }
+                100% 
+                {
+                    transform: translateX(-100%);
+                }
+            }
+
+
+
+
+/* Overrides */
+    /* Vertically aligns a group of content inside a block */
+    .Middle
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+/* Add an empty div to mask over a background image inside other div - Just in testing */
+
+    .BackgroundMask 
+    {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        padding: 0 2vh;
+    }
+        .BackgroundMask.JDBlue
+        {
+            background: rgba(var(--JDBlue), 0.5);
+            color: white;
+        }
+        .BackgroundMask.JDRed
+        {
+            background: rgba(var(--JDRed), 0.5);
+            color: white;
+        }
+    @media (max-width: 1099px) 
+    {
+        .BackgroundMask 
+        {
+            padding: 0;
+        }
+    }
+
+
+
+
+
+/* Footer */
+footer
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    height: 16vh;
+    padding: 2vh 8vw;
+
+    background: rgb(var(--JDBlue));
+}
+    footer,
+    footer p,
+    footer a
+    {
+        color: white;
+        font-size: 1.5vh;
+        font-weight: 300;
+    }
+        footer > div
+        {
+            display: flex;
+            align-items: center;
+        }
+            footer > div:nth-child(even)
+            {
+                justify-content: flex-end;
+            }

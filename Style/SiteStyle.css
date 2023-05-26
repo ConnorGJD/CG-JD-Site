@@ -11,13 +11,28 @@
         font-size: 5vh;
         margin: 0;
     }
+    h3
+    {
+        font-size: 4.5vh;
+        margin: 0;
+    }
     p,a
     {
         font-size: 2vh;
         margin: 0;
     }
 
-    .NavBanner
+    input[type="text"] 
+    {
+        height: 4vh;
+        width: 100%;
+        border: 1px solid rgb(var(--JDBlue));
+        font-size: 2.5vh;
+        color: rgb(var(--JDBlue));
+        padding: 0 1.5vh;
+    }
+
+    header
     {
         position: fixed;
         z-index: 1000;
@@ -83,12 +98,16 @@
     {
         font-size: 4vw;
     }
+    h3
+    {
+        font-size: 3.5vw;
+    }
     p,a
     {
         font-size: 3vw;
     }
 
-    .NavBanner
+    header
     {
         position: fixed;
         z-index: 1000;
