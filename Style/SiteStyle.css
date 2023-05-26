@@ -26,11 +26,15 @@
     {
         height: 4vh;
         width: 100%;
-        border: 1px solid rgb(var(--JDBlue));
+        border: 0.1vh solid rgb(var(--JDBlue));
         font-size: 2.5vh;
         color: rgb(var(--JDBlue));
         padding: 0 1.5vh;
     }
+        input[type="text"]:focus, input:focus
+        {
+            outline: 0.3vh solid red;
+        }
 
     header
     {

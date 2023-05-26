@@ -343,6 +343,7 @@ body
             position: relative;
             z-index: 999;
 
+
             min-width: 20vh;
             min-height: 4vh;
             padding: 0.85vh 1vh 0 1vh;
@@ -353,6 +354,20 @@ body
             text-align: center;
             text-decoration: none;
         }
+            input.Button /*Is a REAL button*/
+            {
+                font-family: 'Poppins', sans-serif;
+                font-size: 2vh;
+                font-weight: 500;
+
+                padding: 1vh;
+                border: none;
+                cursor: pointer;
+            }
+                input.Button.Centre
+                {
+                    margin: auto;
+                }
             .Button.Bold
             {
                 font-weight: 600;
@@ -360,7 +375,8 @@ body
             .Button.Centre
             {
                 text-align: center;
-            }
+            }    
+                
 
 /* Font Colour Setters */
     .Button.JDRed
