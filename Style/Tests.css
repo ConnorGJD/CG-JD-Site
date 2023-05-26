@@ -1,0 +1,11 @@
+.Bubble
+{
+    background-size: cover !important;
+    background-position: center !important;
+
+    background-color: white;
+
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+}

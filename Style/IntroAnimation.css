@@ -34,7 +34,7 @@
     #RingMaster
     {
         position: absolute;
-        background: rgb(var(--JDRed)); 
+        background: rgb(var(--JDRed));
         height: 100%; 
         width: 100%;
 
@@ -92,7 +92,6 @@
         animation: ease-in-out 1s calc(var(--introAnimSpeed) + 1s) FadeIn forwards;
     }
     
-    
     @keyframes DotHolderAnim
     {
         0% 
@@ -114,7 +113,6 @@
             transform: scale(0);
         }
     }
-    
     
     @keyframes Dot1Anim
     {
@@ -231,7 +229,6 @@
             width: 2vh;
         }
     }    
-    
 
     @keyframes RingReveal
     {

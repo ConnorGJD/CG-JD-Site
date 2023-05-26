@@ -112,6 +112,8 @@
             position: absolute;
             
             overflow-y: auto;
+            -ms-overflow-style: none; /* Hide Scroll for Internet Explorer, Edge */
+            scrollbar-width: none; /* Hide Scroll for Firefox */
             background-color: rgba(255, 255, 255, 0.95);
 
             top: 10vh;
@@ -119,6 +121,10 @@
             height: 0vh;
             
             transition: height 1s;
+        }
+        .NavItemContainer::-webkit-scrollbar 
+        {
+            display: none; /* Hide Scroll for Chrome, Safari, and Opera */
         }
             .NavItem
             {
@@ -185,19 +191,4 @@
 
             height: 90vh;
         }
-}
-
-
-
-
-.Bubble
-{
-    background-size: cover !important;
-    background-position: center !important;
-
-    background-color: white;
-
-    height: 20vh;
-    width: 20vh;
-    border-radius: 50%;
 }
