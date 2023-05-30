@@ -1,9 +1,9 @@
-    :root
-    {
-        --introAnimSpeed: 3s;
-    }
+:root
+{
+    --introAnimSpeed: 3s;
+}
 
-    /* Parent of the whole thing */
+/* Parent of the whole thing */
     #AnimationMaster
     {
         width: 100%;
@@ -14,12 +14,13 @@
         justify-content: center;
     }
 
-    /* Items that appear */
+/* Items that appear like the title. Background must match the Blocks background */
     #mainItems 
-    {        
+    {   
+        background: rgb(var(--JDBlue));     
+
         position: absolute;
         margin: auto;
-        
 
         width: 100%;
         height: 100%;
@@ -28,12 +29,11 @@
         justify-content: center;
         flex-direction: column;
 
-        background: rgb(var(--JDBlue));
-
         clip-path: circle(0%);
         animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.2s) RingReveal forwards;
     }
-    /* Ring that appears  */
+
+/* Ring that appears  */
     #RingMaster
     {
         position: absolute;
@@ -45,7 +45,7 @@
         animation: ease-in-out 2s calc(var(--introAnimSpeed) - 0.4s) RingReveal forwards;
     }
 
-    /* Dots */
+/* Dots */
     .DotHolder
     {
         position: absolute;
@@ -56,47 +56,50 @@
 
         animation: ease-in-out calc(var(--introAnimSpeed) * 2) DotHolderAnim forwards;
     }
-    
-    #Dot1Main,
-    #Dot2Main,
-    #Dot3Main,
-    #Dot4Main
-    {
-        margin: auto;
-        position: relative;
-    
-        width: 2vh;
-        height: 2vh;
-        border-radius: 50%;
-    }
-    #Dot1Main
-    {
-        background-color: rgb(var(--JDOrange));
-        animation: ease-in-out var(--introAnimSpeed) Dot1Anim forwards;
+        #Dot1Main,
+        #Dot2Main,
+        #Dot3Main,
+        #Dot4Main
+        {
+            margin: auto;
+            position: relative;
         
-    }
-    #Dot2Main
-    {
-        background-color: rgb(var(--JDTeal));
-        animation: ease-in-out var(--introAnimSpeed) Dot2Anim forwards;
-    }
-    #Dot3Main
-    {
-        background-color: rgb(var(--JDLightBlue));
-        animation: ease-in-out var(--introAnimSpeed) Dot3Anim forwards;
-    }
-    #Dot4Main
-    {
-        animation: ease-in-out var(--introAnimSpeed) Dot4Anim forwards;
-        background-color: rgb(var(--JDRed));
-    }
+            width: 2vh;
+            height: 2vh;
+            border-radius: 50%;
+        }
+            #Dot1Main
+            {
+                background-color: rgb(var(--JDOrange));
+                animation: ease-in-out var(--introAnimSpeed) Dot1Anim forwards;
+                
+            }
+            #Dot2Main
+            {
+                background-color: rgb(var(--JDTeal));
+                animation: ease-in-out var(--introAnimSpeed) Dot2Anim forwards;
+            }
+            #Dot3Main
+            {
+                background-color: rgb(var(--JDLightBlue));
+                animation: ease-in-out var(--introAnimSpeed) Dot3Anim forwards;
+            }
+            #Dot4Main
+            {
+                animation: ease-in-out var(--introAnimSpeed) Dot4Anim forwards;
+                background-color: rgb(var(--JDRed));
+            }
 
+/* Extra classes for items within main content */
     .LateFade
     {
         opacity: 0;
         animation: ease-in-out 1s calc(var(--introAnimSpeed) + 1s) FadeIn forwards;
     }
+   
     
+/* Animations */
+    /* Parent of dots to spin them around */
     @keyframes DotHolderAnim
     {
         0% 
@@ -118,7 +121,8 @@
             transform: scale(0);
         }
     }
-    
+
+    /* Dot1 */
     @keyframes Dot1Anim
     {
         0% 
@@ -147,7 +151,8 @@
             height: 2vh;
         }
     }
-    
+
+    /* Dot 2 */
     @keyframes Dot2Anim
     {
         0% 
@@ -176,7 +181,8 @@
             width: 2vh;
         }
     }
-    
+
+    /* Dot 3 */
     @keyframes Dot3Anim
     {
         0% 
@@ -205,7 +211,8 @@
             height: 2vh;
         }
     }
-    
+
+    /* Dot 4 */
     @keyframes Dot4Anim
     {
         0% 
@@ -235,6 +242,7 @@
         }
     }    
 
+    /* Reveal the content AND the expanding ring effect */
     @keyframes RingReveal
     {
         0% 
@@ -247,6 +255,7 @@
         }
     }
 
+    /* Fade in the button */
     @keyframes FadeIn
     {
         0% 

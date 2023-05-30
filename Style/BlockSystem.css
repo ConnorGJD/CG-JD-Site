@@ -290,6 +290,7 @@ body
                     }
                     
 
+                    
 /* Text */
     /* Fonts Styling */
         .BrandFont
@@ -362,6 +363,7 @@ body
         }
 
 
+
 /* Button */
     /* Button Styling */
         .Button
@@ -410,7 +412,6 @@ body
         {
             transform: scale(1.1);
         }   
-                
 
 /* Font Colour Setters */
     .Button.JDRed
@@ -424,4 +425,15 @@ body
     .Button.JDClear
     {
         background: transparent;
+    }
+
+
+
+/* EXTRAS */
+    /* Vertically aligns a group of content inside a block */
+    .Middle
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }

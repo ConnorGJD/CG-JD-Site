@@ -56,14 +56,6 @@
 
 
 /* FOR BLOCKSYSTEM.CSS : */
-    /* Vertically aligns a group of content inside a block */
-        .Middle
-        {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
 
     /* Add an empty div to mask over a background image inside other div */
         .BackgroundMask 
