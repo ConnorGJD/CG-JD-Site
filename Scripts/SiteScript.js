@@ -1,18 +1,40 @@
-//NavBar hider
+//NavBar hider (older version)
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function() 
+// {
+//     var currentScrollPos = window.pageYOffset;
+//     if (prevScrollpos > currentScrollPos) 
+//     {
+//         document.getElementById("NavBanner").style.top = "0";
+//     } 
+//     else if(window.pageYOffset > 500 && window.matchMedia("(min-width: 1100px)").matches) 
+//     {
+//         document.getElementById("NavBanner").style.top = "-10vh";
+//     }
+//     prevScrollpos = currentScrollPos;
+// }
+
+//NavBar hider (reduced polling version)
+var pollingRate;
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() 
-{
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) 
+window.addEventListener("scroll", function()
+{ 
+    clearTimeout(pollingRate)
+    pollingRate = setTimeout(function()
     {
-        document.getElementById("NavBanner").style.top = "0";
-    } 
-    else if(window.pageYOffset > 500 && window.matchMedia("(min-width: 1100px)").matches) 
-    {
-        document.getElementById("NavBanner").style.top = "-10vh";
-    }
-    prevScrollpos = currentScrollPos;
-}
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) 
+        {
+            document.getElementById("NavBanner").style.top = "0";
+        } 
+        else if(window.pageYOffset > 500 && window.matchMedia("(min-width: 1100px)").matches) 
+        {
+            document.getElementById("NavBanner").style.top = "-10vh";
+        }
+        prevScrollpos = currentScrollPos;
+    },
+    40)
+})
 
 
 //Mobile hamburger
