@@ -32,42 +32,27 @@
             }
             .Carousel > div
             {
-                min-width: 100%;
-
-                display: grid; 
-                grid-template-columns: repeat(6, 1fr);
+                min-width: 80vw;
+                display: flex;
+                justify-content: space-around;
 
                 animation: 20s scrollingImg linear infinite;
             }
                 .Carousel > div > div
                 {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    background-size: cover !important;
-                    background-position: center !important;
-
-                    background-color: rgb(238, 238, 238);
-
-                    height: 20vh;
-                    width: 20vh;
-                    border-radius: 50%;
-
+                    /* This is for the trusted by logos */
                 }
                     @keyframes scrollingImg
                     {
                         0% 
                         {
-                            transform: translateX(0%);
+                            transform: translateX(0vw);
                         }
                         100% 
                         {
-                            transform: translateX(-100%);
+                            transform: translateX(-80vw);
                         }
                     }
-
-
 
 
 /* FOR BLOCKSYSTEM.CSS : */

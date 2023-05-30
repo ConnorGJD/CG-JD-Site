@@ -228,18 +228,18 @@ footer
             height: 90vh;
         }
 
-/* Footer */
-footer
-{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 1fr);
-
-    height: fit-content;
-    padding: 3vh 8vw;
-
-}
-    footer > div:nth-child(even)
+    /* Footer */
+    footer
     {
-        justify-content: flex-start;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+
+        height: fit-content;
+        padding: 3vh 8vw;
+
     }
+        footer > div:nth-child(even)
+        {
+            justify-content: flex-start;
+        }
 }
