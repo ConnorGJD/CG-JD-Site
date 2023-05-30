@@ -40,7 +40,8 @@
             }
                 .Carousel > div > div
                 {
-                    /* This is for the trusted by logos */
+                    /* For the logos */
+                    width: 10vw;
                 }
                     @keyframes scrollingImg
                     {

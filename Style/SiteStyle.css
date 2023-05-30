@@ -27,6 +27,7 @@ form > *
     padding: 1.5vh 0;
 }
 
+/* Text */
 input[type="text"] 
 {
     height: 4vh;
@@ -41,44 +42,40 @@ input[type="text"]
         outline: 0.3vh solid rgb(var(--JDRed));
     }
 
-
+/* Checkboxes */
 input[type="checkbox"]
 {   
     position: absolute;
     cursor: pointer;
     opacity: 0;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-    input[type="checkbox"]:focus
+    .JDCheck > span
     {
-        outline: none;
-    }
+        border: 0.1vh solid rgb(var(--JDBlue));
+        cursor: pointer;
 
-    .JDCheck
-    {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        
+        width: 1.8vh;
+        height: 1.8vh;
+
+        display: inline-block;
     }
-        .checkBox
+        /*Unchecked*/
+        .JDCheck input[type="checkbox"] + span > img
         {
-            border: 0.1vh solid rgb(var(--JDBlue));
-            cursor: pointer;
-
+            position: absolute;
+            display: none;
             width: 1.8vh;
             height: 1.8vh;
-
-            display: inline-block;                
         }
-
-        .JDCheck input[type="checkbox"] + .checkBox /*Unchecked*/
+        /*Checked*/
+        .JDCheck input[type="checkbox"]:checked + span > img
         {
-            background-color: whitesmoke;
-        }
-        .JDCheck input[type="checkbox"]:checked + .checkBox /*Checked*/
-        {
-            background-color: rgb(var(--JDRed));
+            display: unset;
         }
     
 
@@ -215,7 +212,7 @@ footer
         {
             display: block;
             
-            overflow-y: auto;
+            overflow-y: scroll;
             -ms-overflow-style: none; /* Hide Scroll for Internet Explorer, Edge */
             scrollbar-width: none; /* Hide Scroll for Firefox */
             background-color: rgba(255, 255, 255, 0.95);
