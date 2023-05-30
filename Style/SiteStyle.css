@@ -20,7 +20,13 @@ p,a
     margin: 0;
 }
 
-/* Input Styling */
+/* Form Styling */
+form > *
+{
+    display: block;
+    padding: 1.5vh 0;
+}
+
 input[type="text"] 
 {
     height: 4vh;
@@ -30,11 +36,51 @@ input[type="text"]
     color: rgb(var(--JDBlue));
     padding: 0 1.5vh;
 }
-    input[type="text"]:focus,
-    input:focus
+    input[type="text"]:focus
     {
         outline: 0.3vh solid rgb(var(--JDRed));
     }
+
+
+input[type="checkbox"]
+{   
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+    input[type="checkbox"]:focus
+    {
+        outline: none;
+    }
+
+    .JDCheck
+    {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+    }
+        .checkBox
+        {
+            border: 0.1vh solid rgb(var(--JDBlue));
+            cursor: pointer;
+
+            width: 1.8vh;
+            height: 1.8vh;
+
+            display: inline-block;                
+        }
+
+        .JDCheck input[type="checkbox"] + .checkBox /*Unchecked*/
+        {
+            background-color: whitesmoke;
+        }
+        .JDCheck input[type="checkbox"]:checked + .checkBox /*Checked*/
+        {
+            background-color: rgb(var(--JDRed));
+        }
+    
 
 
 /* Site Heading banner */

@@ -226,13 +226,18 @@
                 <p class="BrandFont Centre">Give us a try!</p><br>
                 <p class="BrandFont Centre">Or if you would rather, let's take this to your inbox. Get our latest brochure which includes how we have helped others and how we can help elevate your brand too.</p><br>
                 <form>
-                    <label class="BrandFont JDRed Bold" for="coffeeEmail">Enter your Email:</label><br>
+                    <label class="BrandFont JDRed" for="coffeeEmail">Enter your Email:</label>
                     <input required id="coffeeEmail" type="text" />
-                    <br>
-                    <label class="BrandFont JDRed Bold" for="coffeeAgree">Agree to...</label>
-                    <input required id="coffeeAgree" type="checkbox">
 
-                    <input class="Button JDBlue Centre Bold" type="submit">
+                    <!-- May need aria tag IDK yet -->
+                    <label class="BrandFont JDRed JDCheck" for="coffeeAgree" checked="checked">
+                        <input required id="coffeeAgree" type="checkbox">
+                        <span class="checkBox"></span>
+                        Agree to recive marketing emails from just digital.
+                    </label>
+
+                    <input class="Button JDBlue Centre Bold" type="submit" />
+
                 </form>
             </div>
 
