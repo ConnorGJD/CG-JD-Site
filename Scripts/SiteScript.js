@@ -31,7 +31,7 @@ function()
         else if(window.pageYOffset > 500 && window.matchMedia("(min-width: 1100px)").matches) /*Check for minimum scrolled distance and mobile view*/
         {
             document.getElementById("NavBanner").style.top = "-10.1vh";
-            naviMenus();
+            sweepAllMenus();//Close menus when navbar slides away on desktop
         }
         prevScrollpos = currentScrollPos;
     }, 40)//Polling rate in milliseconds
@@ -62,11 +62,13 @@ function naviMenus(recive)
         case 'mobile':
             if(mblDrop.classList.contains("open"))
             {
+                sweepAllMenus();
                 mblDrop.classList.remove("open");
                 mblBtn.classList.remove("open");
             }
             else
             {
+                
                 mblDrop.classList.add("open");
                 mblBtn.classList.add("open");
             }
@@ -100,7 +102,7 @@ function naviMenus(recive)
         
     }
 }
-//Manu sweeper - to close all menus. Used every time a menu is opened to close any others (except hamburger)
+//Manu sweeper - to close all menus. Used every time a menu is opened to close any others
 function sweepAllMenus()
 {
     menus.forEach(element =>

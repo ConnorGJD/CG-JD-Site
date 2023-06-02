@@ -209,19 +209,19 @@
 {
     h1
     {
-        font-size: 6vw;
+        font-size: 6vh;
     }
     h2
     {
-        font-size: 4vw;
+        font-size: 4vh;
     }
     h3
     {
-        font-size: 3.5vw;
+        font-size: 3.5vh;
     }
     p,a
     {
-        font-size: 3vw;
+        font-size: 3vh;
     }
 
     header
