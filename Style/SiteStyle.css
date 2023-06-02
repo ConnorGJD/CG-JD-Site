@@ -18,69 +18,11 @@
     {
         font-size: 2vh;
         margin: 0;
-    }
-
-    /* Form Styling */
-    form > *
-    {
-        display: block;
-        padding: 1.5vh 0;
-    }
-
-/* Text */
-    input[type="text"] 
-    {
-        height: 4vh;
-        width: 100%;
-        border: 0.1vh solid rgb(var(--JDBlue));
-        font-size: 2.5vh;
-        color: rgb(var(--JDBlue));
-        padding: 0 1.5vh;
-    }
-        input[type="text"]:focus
-        {
-            outline: 0.3vh solid rgb(var(--JDRed));
-        }
-
-    /* Checkboxes */
-    input[type="checkbox"]
-    {   
-        position: absolute;
-        cursor: pointer;
-        opacity: 0;
-        
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-        .JDCheck > span
-        {
-            border: 0.1vh solid rgb(var(--JDBlue));
-            cursor: pointer;
-
-            width: 1.8vh;
-            height: 1.8vh;
-
-            display: inline-block;
-        }
-            /*Unchecked*/
-            .JDCheck input[type="checkbox"] + span > img
-            {
-                position: absolute;
-                display: none;
-                width: 1.8vh;
-                height: 1.8vh;
-            }
-            /*Checked*/
-            .JDCheck input[type="checkbox"]:checked + span > img
-            {
-                display: unset;
-            }
-    
+    }    
 
 
-/* Site Heading banner */
+
+/* Site nav bar */
     header
     {
         position: fixed;
@@ -140,18 +82,61 @@
                         text-decoration: underline;
                     }
 
-            /* Navextritems go here */
+    /* Drop down menus on nav bar */
+        .NavDropItems
+        {
+            position: absolute;
+            background: white;
+            
+            top: 10vh;
+        
+            width: 30vh;
+            height: 0;
+        
+            overflow: auto;
 
-            #NavSocialItems
+            border: solid rgba(var(--JDBlue), 0.2);
+            border-width: 0;
+            
+            transition: height 0.4s, border-width 0.4s;
+        }
+        /* Custom Scrollbar */
+            .NavDropItems::-webkit-scrollbar 
             {
-                height: 100%;
-                min-width: 10vh;
-
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-
-                text-decoration: none;
+                width: 0.5vh;
             }
+                .NavDropItems::-webkit-scrollbar-thumb
+                {
+                    background: rgba(var(--JDRed),0.9);
+                    border-radius: 1vh;
+                }
+
+            .NavDropItems.Open
+            {
+                border-width: 0 0.1vh 0.1vh 0.1vh;
+                height: 50vh;
+            }
+                .NavDropItems > .NavItem
+                {
+                    height: 10vh !important;
+                    width: 100% !important;
+                }
+                    .NavBack
+                    {
+                        display: none;
+                    }
+
+    /* Social items on nav bar */
+        #NavSocialItems
+        {
+            height: 100%;
+            min-width: 10vh;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            text-decoration: none;
+        }
             #NavSocialItems > a
             {
                 display: flex;
@@ -166,11 +151,70 @@
                     height: 1.8vh;
                 }
 
+    /* Mobile hamburger */
         #mobiNavBtn
         {
             display: none;
         }
 
+
+
+/* Form Styling */
+    form > *
+    {
+        display: block;
+        padding: 1.5vh 0;
+    }
+    /* Text */
+        input[type="text"] 
+        {
+            height: 4vh;
+            width: 100%;
+            border: 0.1vh solid rgb(var(--JDBlue));
+            font-size: 2.5vh;
+            color: rgb(var(--JDBlue));
+            padding: 0 1.5vh;
+        }
+            input[type="text"]:focus
+            {
+                outline: 0.3vh solid rgb(var(--JDRed));
+            }
+
+    /* Checkboxes */
+        input[type="checkbox"]
+        {   
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+            .JDCheck > span
+            {
+                border: 0.1vh solid rgb(var(--JDBlue));
+                cursor: pointer;
+
+                width: 1.8vh;
+                height: 1.8vh;
+
+                display: inline-block;
+            }
+                /*Unchecked*/
+                .JDCheck input[type="checkbox"] + span > img
+                {
+                    position: absolute;
+                    display: none;
+                    width: 1.8vh;
+                    height: 1.8vh;
+                }
+                /*Checked*/
+                .JDCheck input[type="checkbox"]:checked + span > img
+                {
+                    display: unset;
+                }
             
 
 
@@ -224,6 +268,7 @@
         font-size: 3vh;
     }
 
+/* Site nav bar */
     header
     {
         transition: none;
@@ -233,8 +278,8 @@
             display: block;
             
             overflow-y: scroll;
-            -ms-overflow-style: none; /* Hide Scroll for Internet Explorer, Edge */
-            scrollbar-width: none; /* Hide Scroll for Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
             background-color: rgba(255, 255, 255, 0.95);
 
             right: 0;
@@ -263,69 +308,117 @@
                     text-decoration: underline;
                 }
 
-            #NavSocialItems
+    /* Social items on nav bar */
+        #NavSocialItems
+        {
+            height: 15vh;
+
+            width: fit-content;
+            margin: auto;
+        }
+            #NavSocialItems > a > img
             {
-                height: 15vh;
-
-                width: fit-content;
-                margin: auto;
+                height: 6vh;
+                width: 10vh;
             }
-                #NavSocialItems > a > img
-                {
-                    height: 6vh;
-                    width: 10vh;
-                }
                 
-
     /* Mobile "Hamburger" Button */
-    #mobiNavBtn
-    {   
-        display: unset;
-        z-index: 4;    
-        position: absolute;
-        right: 5vw;
-    }
-        /* Mobile Button Style */
-        #mobiNavBtn p
-        {    
-            background-color: rgb(var(--JDBlue));
-            border: 0.3vh solid white;
+        #mobiNavBtn
+        {   
+            display: unset;
+            z-index: 4;    
+            position: absolute;
+            right: 5vw;
+        }
+        /* Burger Patties */
+            #mobiNavBtn p
+            {    
+                background-color: rgb(var(--JDBlue));
+                border: 0.3vh solid white;
 
-            width: 4.5vh;
-            height: 0.8vh;
+                width: 4.5vh;
+                height: 0.8vh;
 
-            display: block;
-            margin-left: auto; 
-            margin-right: 0;
+                display: block;
+                margin-left: auto; 
+                margin-right: 0;
 
-            margin: 0 0 0 auto;
+                margin: 0 0 0 auto;
+                transition: width 1s;
+            }
+            /* Open. Change the style */
+                #mobiNavBtn.open p:first-of-type
+                {   
+                    background-color: rgb(var(--JDRed));
+                    width: 4.5vh;
+                }
+                #mobiNavBtn.open p
+                {   
+                    background-color: rgb(var(--JDRed));
+                    width: 5.1vh;
+                }
+                #mobiNavBtn.open p:last-of-type
+                {   
+                    background-color: rgb(var(--JDRed));
+                    width: 5.7vh;
+                }
+                    #NavItemContainer.open
+                    {
+                        display: block;
+
+                        height: 90vh;
+                    }
+
+    /* Drop down menus on nav bar */
+        .NavDropItems
+        {
+            background: rgb(240, 240, 240);
+
+            top: 0;
+            right: 0;
+
+            width: 0;
+            height: 100%;
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            border: none;
             transition: width 1s;
         }
-
-    /* Open. Change the style */
-    #mobiNavBtn.open p:first-of-type
-    {   
-        background-color: rgb(var(--JDRed));
-        width: 4.5vh;
-    }
-    #mobiNavBtn.open p
-    {   
-        background-color: rgb(var(--JDRed));
-        width: 5.1vh;
-    }
-    #mobiNavBtn.open p:last-of-type
-    {   
-        background-color: rgb(var(--JDRed));
-        width: 5.7vh;
-    }
-        #NavItemContainer.open
+            .NavDropItems::-webkit-scrollbar 
+            {
+                display: none;
+            }
+            .NavDropItems.Open
+            {
+                width: 100%;
+                height: 100%;
+            }
+                .NavDropItems > .NavItem
+                {
+                    height: 15vh !important;
+                }
+        .NavBack
         {
-            display: block;
+            color: rgb(var(--JDRed));
+            font-weight: bold;
+            font-size: 5vh;
 
-            height: 90vh;
+            position: fixed;
+            display: block;
+            padding: 5vh;
+            cursor: pointer;
         }
 
-    /* Footer */
+
+        
+/* Form Styling */
+    /* No mobile specific styling yet */
+
+
+
+/* Footer */
     footer
     {
         grid-template-columns: 1fr;

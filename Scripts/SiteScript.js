@@ -53,11 +53,6 @@ function naviMenus(recive)
 {   
     switch(recive)
     {
-        //Closes all
-        default:
-            sweepAllMenus();
-        break;
-
         //Mobile "Hamburger"
         case 'mobile':
             if(mblDrop.classList.contains("open"))
