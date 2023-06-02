@@ -71,8 +71,7 @@ body
     /* Block Styling - Desktop */
         .Block
         {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             justify-content: center;
 
             overflow: hidden;
