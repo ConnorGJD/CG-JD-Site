@@ -94,8 +94,14 @@
     {
         opacity: 0;
         animation: ease-in-out 1s calc(var(--introAnimSpeed) + 1s) FadeIn forwards;
+
+        /* Transition and :hover for button - remove if this class is used for other stuff */
+        transition: padding 0.5s !important;
     }
-   
+        .LateFade:hover
+        {
+            padding: 0.85vh 2vh;
+        }
     
 /* Animations */
     /* Parent of dots to spin them around */

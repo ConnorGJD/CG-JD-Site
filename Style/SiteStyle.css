@@ -1,188 +1,208 @@
 /* Base Font Sizes */
-h1
-{
-    font-size: 7vh;
-    margin: 0;
-}
-h2
-{
-    font-size: 5vh;
-    margin: 0;
-}
-h3
-{
-    font-size: 4.5vh;
-    margin: 0;
-}
-p,a
-{
-    font-size: 2vh;
-    margin: 0;
-}
+    h1
+    {
+        font-size: 7vh;
+        margin: 0;
+    }
+    h2
+    {
+        font-size: 5vh;
+        margin: 0;
+    }
+    h3
+    {
+        font-size: 4.5vh;
+        margin: 0;
+    }
+    p,a
+    {
+        font-size: 2vh;
+        margin: 0;
+    }
 
-/* Form Styling */
-form > *
-{
-    display: block;
-    padding: 1.5vh 0;
-}
+    /* Form Styling */
+    form > *
+    {
+        display: block;
+        padding: 1.5vh 0;
+    }
 
 /* Text */
-input[type="text"] 
-{
-    height: 4vh;
-    width: 100%;
-    border: 0.1vh solid rgb(var(--JDBlue));
-    font-size: 2.5vh;
-    color: rgb(var(--JDBlue));
-    padding: 0 1.5vh;
-}
-    input[type="text"]:focus
+    input[type="text"] 
     {
-        outline: 0.3vh solid rgb(var(--JDRed));
-    }
-
-/* Checkboxes */
-input[type="checkbox"]
-{   
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-    .JDCheck > span
-    {
+        height: 4vh;
+        width: 100%;
         border: 0.1vh solid rgb(var(--JDBlue));
-        cursor: pointer;
-
-        width: 1.8vh;
-        height: 1.8vh;
-
-        display: inline-block;
+        font-size: 2.5vh;
+        color: rgb(var(--JDBlue));
+        padding: 0 1.5vh;
     }
-        /*Unchecked*/
-        .JDCheck input[type="checkbox"] + span > img
+        input[type="text"]:focus
         {
-            position: absolute;
-            display: none;
+            outline: 0.3vh solid rgb(var(--JDRed));
+        }
+
+    /* Checkboxes */
+    input[type="checkbox"]
+    {   
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+        .JDCheck > span
+        {
+            border: 0.1vh solid rgb(var(--JDBlue));
+            cursor: pointer;
+
             width: 1.8vh;
             height: 1.8vh;
+
+            display: inline-block;
         }
-        /*Checked*/
-        .JDCheck input[type="checkbox"]:checked + span > img
-        {
-            display: unset;
-        }
+            /*Unchecked*/
+            .JDCheck input[type="checkbox"] + span > img
+            {
+                position: absolute;
+                display: none;
+                width: 1.8vh;
+                height: 1.8vh;
+            }
+            /*Checked*/
+            .JDCheck input[type="checkbox"]:checked + span > img
+            {
+                display: unset;
+            }
     
 
 
 /* Site Heading banner */
-header
-{
-    position: fixed;
-    z-index: 1000;
-
-    width: 100%;
-    height: 10vh;
-    background-color: white;
-    
-    display: flex;
-    align-items: center;
-
-    transition: top 0.4s;
-}
-    .NavLogo
+    header
     {
-        position: absolute;
-        left: 5vw;
-        height: 5vh;
-    }
-    .NavItemContainer
-    {
-        position: absolute;
-        right: 5vw;
+        position: fixed;
+        z-index: 1000;
 
+        width: 100%;
         height: 10vh;
+        background-color: white;
+        border-bottom: 0.1vh solid rgba(var(--JDBlue), 0.2);
         
         display: flex;
         align-items: center;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        transition: top 0.4s;
     }
-        .NavItem
+        #NavLogo
         {
-            height: 100%;
-            min-width: 10vh;
+            position: absolute;
+            left: 5vw;
+            height: 5vh;
+        }
+        #NavItemContainer
+        {
+            position: absolute;
+            right: 5vw;
 
+            height: 10vh;
+            
             display: flex;
-            justify-content: center;
             align-items: center;
-
-            color: rgb(var(--JDBlue));
-            text-decoration: none;
-            font-weight: 400;
         }
-            .NavItem:hover
+            .NavItem
             {
-                text-decoration: underline;
+                height: 100%;
+                min-width: 10vh;
             }
+                .NavItem > a
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    color: rgb(var(--JDBlue));
+                    text-decoration: none;
+                    font-weight: 400;
 
-        .NavSocialItems
+                    height: 100%;
+                    width: 100%;
+                }
+                    .NavItem > a:hover
+                    {
+                        text-decoration: underline;
+                    }
+
+            /* Navextritems go here */
+
+            #NavSocialItems
+            {
+                height: 100%;
+                min-width: 10vh;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                text-decoration: none;
+            }
+            #NavSocialItems > a
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 100%;
+                width: 100%;
+            }
+                #NavSocialItems > a > img
+                {
+                    height: 1.8vh;
+                }
+
+        #mobiNavBtn
         {
-            height: 100%;
-            min-width: 10vh;
-
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            align-items: center;
-            justify-items: center;
-
-            text-decoration: none;
+            display: none;
         }
-            .NavSocialItems > a > img
-            {
-                height: 1.6vh;
-            }
 
             
 
 
 /* Footer */
-footer
-{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-
-    height: 16vh;
-    padding: 3vh 8vw;
-
-    background: rgb(var(--JDBlue));
-}
-    footer,
-    footer p,
-    footer a
+    footer
     {
-        color: white;
-        font-size: 1.5vh;
-        font-weight: 300;
-    }
-        footer > div
-        {
-            display: flex;
-            align-items: center;
-        }
-            footer > div:nth-child(even)
-            {
-                justify-content: flex-end;
-            }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
 
-.mobiNavBtn
-{
-    display: none;
-}
+        height: 16vh;
+        padding: 3vh 8vw;
+
+        background: rgb(var(--JDBlue));
+    }
+        footer,
+        footer p,
+        footer a
+        {
+            color: white;
+            font-size: 1.5vh;
+            font-weight: 300;
+        }
+            footer > div
+            {
+                display: flex;
+                align-items: center;
+            }
+                footer > div:nth-child(even)
+                {
+                    justify-content: flex-end;
+                }
 
 /* Mobile View */
 @media (max-width: 1099px) 
@@ -208,7 +228,7 @@ footer
     {
         transition: none;
     }
-        .NavItemContainer
+        #NavItemContainer
         {
             display: block;
             
@@ -224,7 +244,7 @@ footer
             
             transition: height 1s;
         }
-        .NavItemContainer::-webkit-scrollbar 
+        #NavItemContainer::-webkit-scrollbar 
         {
             display: none; /* Hide Scroll for Chrome, Safari, and Opera */
         }
@@ -243,14 +263,14 @@ footer
                     text-decoration: underline;
                 }
 
-            .NavSocialItems
+            #NavSocialItems
             {
                 height: 15vh;
 
                 width: fit-content;
                 margin: auto;
             }
-                .NavSocialItems > a > img
+                #NavSocialItems > a > img
                 {
                     height: 6vh;
                     width: 10vh;
@@ -258,7 +278,7 @@ footer
                 
 
     /* Mobile "Hamburger" Button */
-    .mobiNavBtn
+    #mobiNavBtn
     {   
         display: unset;
         z-index: 4;    
@@ -266,7 +286,7 @@ footer
         right: 5vw;
     }
         /* Mobile Button Style */
-        .mobiNavBtn p
+        #mobiNavBtn p
         {    
             background-color: rgb(var(--JDBlue));
             border: 0.3vh solid white;
@@ -283,22 +303,22 @@ footer
         }
 
     /* Open. Change the style */
-    .mobiNavBtn.open p:first-of-type
+    #mobiNavBtn.open p:first-of-type
     {   
         background-color: rgb(var(--JDRed));
         width: 4.5vh;
     }
-    .mobiNavBtn.open p
+    #mobiNavBtn.open p
     {   
         background-color: rgb(var(--JDRed));
         width: 5.1vh;
     }
-    .mobiNavBtn.open p:last-of-type
+    #mobiNavBtn.open p:last-of-type
     {   
         background-color: rgb(var(--JDRed));
         width: 5.7vh;
     }
-        .NavItemContainer.open
+        #NavItemContainer.open
         {
             display: block;
 

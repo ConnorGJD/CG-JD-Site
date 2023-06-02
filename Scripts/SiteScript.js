@@ -17,7 +17,8 @@
 //NavBar hider (Version 2 - more performant with a reduced polling rate)
 var pollingRate;
 var prevScrollpos = window.pageYOffset;
-window.addEventListener("scroll", function()
+window.addEventListener("scroll",
+function()
 { 
     clearTimeout(pollingRate)
     pollingRate = setTimeout(function()
@@ -29,28 +30,81 @@ window.addEventListener("scroll", function()
         } 
         else if(window.pageYOffset > 500 && window.matchMedia("(min-width: 1100px)").matches) /*Check for minimum scrolled distance and mobile view*/
         {
-            document.getElementById("NavBanner").style.top = "-10vh";
+            document.getElementById("NavBanner").style.top = "-10.1vh";
+            naviMenus();
         }
         prevScrollpos = currentScrollPos;
-    },
-    40)//Polling rate in milliseconds
+    }, 40)//Polling rate in milliseconds
 })
 
 
-//Mobile hamburger
-function mobileDropDown()
-{
-    var mblDrop = document.getElementById("NavItemContainer");
-    var mblBtn = document.getElementById("mobiNavBtn");
 
-    if(mblDrop.classList.contains("open"))
+//Mobile hamburger
+var mblDrop = document.getElementById("NavItemContainer");
+var mblBtn = document.getElementById("mobiNavBtn");
+//DropMenu
+const menus =
+[
+    document.getElementById('TestMenu'),
+    document.getElementById('TestMenu1')
+]
+//Manu Handeler
+function naviMenus(recive)
+{   
+    switch(recive)
     {
-        mblDrop.classList.remove("open");
-        mblBtn.classList.remove("open");
+        //Closes all
+        default:
+            sweepAllMenus();
+        break;
+
+        //Mobile "Hamburger"
+        case 'mobile':
+            if(mblDrop.classList.contains("open"))
+            {
+                mblDrop.classList.remove("open");
+                mblBtn.classList.remove("open");
+            }
+            else
+            {
+                mblDrop.classList.add("open");
+                mblBtn.classList.add("open");
+            }
+        break;
+
+        //TestMenu
+        case 0:
+            if(menus[0].classList.contains("Open"))
+            {
+                menus[0].classList.remove("Open");
+            }
+            else
+            {
+                sweepAllMenus();
+                menus[0].classList.add("Open");
+            }
+        break;
+
+        //TestMenu1
+        case 1:
+            if(menus[1].classList.contains("Open"))
+            {
+                menus[1].classList.remove("Open");
+            }
+            else
+            {
+                sweepAllMenus();
+                menus[1].classList.add("Open");
+            }
+        break;
+        
     }
-    else
+}
+//Manu sweeper - to close all menus. Used every time a menu is opened to close any others (except hamburger)
+function sweepAllMenus()
+{
+    menus.forEach(element =>
     {
-        mblDrop.classList.add("open");
-        mblBtn.classList.add("open");
-    }
+        element.classList.remove("Open");
+    });
 }

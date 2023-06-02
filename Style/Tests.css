@@ -1,5 +1,5 @@
 /* GENERAL TESTING : */
-    /* Circle Bubble for image */
+    /* Circle Bubble for image - NOT IN USE */
         .Bubble
         {
             background-size: cover !important;
@@ -11,6 +11,63 @@
             width: 20vh;
             border-radius: 50%;
         }
+
+
+/* Will become a navibar dropdown menu */
+/*  - This will use javascript to open and close. On scroll down, the menu will hide along with the nav bar. 
+    - CSS Animation for open and close would be ideal. Height will a set value to fit the items as Fit-content cant be animated.
+    - The mobile menu will slide in from the right and push the main menu off screen. There will need to be a back button for mobile only.
+    - Attempt to make it flexible and reusable. This will need changing to a class selector if it can. Fret not if it cant
+*/
+.NavDropItems
+{
+    position: absolute;
+    background: white;
+    
+    top: 10vh;
+
+    width: 30vh;
+    height: 0;
+
+    overflow: hidden;
+    border: solid rgba(var(--JDBlue), 0.2);
+    border-width: 0;
+    
+    transition: height 0.4s, border-width 0.4s;
+}
+    .NavDropItems.Open
+    {
+        border-width: 0 0.1vh 0.1vh 0.1vh;
+        height: 50vh;
+    }
+        .NavDropItems > .NavItem
+        {
+            height: 10vh !important;
+            width: 100% !important;
+        }
+
+@media (max-width: 1099px) 
+{
+    .NavDropItems
+    {
+        background: #ffffff82;
+
+        top: 0;
+
+        width: 0;
+        height: 100%;
+
+        border: none;
+    }
+        .NavDropItems.Open
+        {
+            width: 100%;
+            height: 100%;
+        }
+}
+
+
+
 
     /* "Trusted by" Carousel */
         .Carousel
@@ -68,12 +125,12 @@
         }
             .BackgroundMask.JDBlue
             {
-                background: rgba(var(--JDBlue), 0.5);
+                background: rgba(var(--JDBlue), 0.62);
                 color: white;
             }
             .BackgroundMask.JDRed
             {
-                background: rgba(var(--JDRed), 0.5);
+                background: rgba(var(--JDRed), 0.62);
                 color: white;
             }
         @media (max-width: 1099px) 

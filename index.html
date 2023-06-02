@@ -25,26 +25,51 @@
 
     <!-- Nav Banner -->
     <header id="NavBanner">
-        <img class="NavLogo" src="Assets/JDBrand/JD_blue_map_MASTER.svg" alt="Just Digital Logo">
-        <div id="mobiNavBtn" class="mobiNavBtn" onclick="mobileDropDown()" aria-label="mobile menu" aria-owns="NavItemContainer">
+        <img id="NavLogo" src="Assets/JDBrand/JD_blue_map_MASTER.svg" alt="Just Digital Logo">
+        <div id="mobiNavBtn" onclick="naviMenus('mobile')" aria-label="mobile menu" aria-owns="NavItemContainer">
             <p></p>
             <p></p>
             <p></p>
         </div>
-        <div id="NavItemContainer" class="NavItemContainer">
-            <a class="NavItem" href="">
-                link 1
-            </a>
-            <a class="NavItem" href="">
-                link 2
-            </a>
-            <a class="NavItem" href="">
-                link 3
-            </a>
-            <a class="NavItem" href="">
-                link 4
-            </a>
-            <div class="NavSocialItems">
+        <div id="NavItemContainer">
+            <!-- Link 1 -->
+            <div class="NavItem">
+                <a onclick="naviMenus(1)">link 1</a>
+                <div id="TestMenu1" class="NavDropItems">
+                    <div class="NavItem">
+                        <a href="">link 1</a>
+                    </div>
+                    <div class="NavItem">
+                        <a href="">link 1</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link 1 (Dropdown) -->
+            <div class="NavItem">
+                <a onclick="naviMenus(0)">link 2</a>
+                <div id="TestMenu" class="NavDropItems">
+                    <div class="NavItem">
+                        <a href="">link 1</a>
+                    </div>
+                    <div class="NavItem">
+                        <a href="">link 1</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link 3 -->
+            <div class="NavItem">
+                <a href="">link 3</a>
+            </div>
+
+            <!-- Link 4 -->
+            <div class="NavItem">
+                <a href="">link 4</a>
+            </div>
+
+            <!-- Social Links -->
+            <div id="NavSocialItems">
                 <a href="" aria-label="Socia Icons">
                     <img src="Assets/FacebookLogo.svg" aria-label="Just Digital Facebook" alt="Just Digital Facebook">
                 </a>
@@ -52,7 +77,7 @@
                     <img src="Assets/InstagramLogo.svg" aria-label="Just Digital Instagram" alt="Just Digital Instagram">
                 </a>
             </div>
-            
+
         </div>
     </header>
 
@@ -157,7 +182,7 @@
                 <div class="BackgroundMask JDBlue">
                     <br><h2 class="BrandFont Bold Centre JDOrange">Headline</h2>
                     <p class="BrandFont Centre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iure expedita distinctio ut. Nobis eaque iste quos aliquam cum sapiente atque in facere excepturi. Architecto maxime quo ipsam, iure ipsum aspernatur accusamus! Odit fugiat repudiandae possimus tempore doloremque error sit?</p>
-                    <br><a href="" class="Button JDClear Bold">Read More</a>
+                    <br><a href="" class="Button JDClearWhite Bold">Read More</a>
                 </div>
             </div>
             <div style="background: url(Assets/pexels-fauxels-3184292.jpg);">
