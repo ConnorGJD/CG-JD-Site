@@ -31,7 +31,7 @@
         width: 100%;
         height: 10vh;
         background-color: white;
-        border-bottom: 0.1vh solid rgba(var(--JDBlue), 0.2);
+        border-bottom: 0.1vh solid rgba(var(--JDBlue), 0.1);
         
         display: flex;
         align-items: center;
@@ -47,7 +47,7 @@
         {
             position: absolute;
             left: 5vw;
-            height: 5vh;
+            height: 2.5vh;
         }
         #NavItemContainer
         {
@@ -94,37 +94,59 @@
             height: 0;
         
             overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
 
-            border: solid rgba(var(--JDBlue), 0.2);
+            border: solid rgba(var(--JDBlue), 0.1);
             border-width: 0;
             
             transition: height 0.4s, border-width 0.4s;
         }
-        /* Custom Scrollbar */
+        /* Hide Scrollbar */
             .NavDropItems::-webkit-scrollbar 
             {
-                width: 0.5vh;
+                display: none;
             }
-                .NavDropItems::-webkit-scrollbar-thumb
-                {
-                    background: rgba(var(--JDRed),0.9);
-                    border-radius: 1vh;
-                }
 
             .NavDropItems.Open
             {
                 border-width: 0 0.1vh 0.1vh 0.1vh;
-                height: 50vh;
             }
-                .NavDropItems > .NavItem
+            /*Special Box Scaling for Open - Up to 5 items currently*/
+                .NavDropItems:has(.NavItem:nth-of-type(1)).Open
                 {
-                    height: 10vh !important;
-                    width: 100% !important;
+                    height: 10vh;
                 }
-                    .NavBack
-                    {
-                        display: none;
-                    }
+                .NavDropItems:has(.NavItem:nth-of-type(2)).Open
+                {
+                    height: 20vh;
+                }
+                .NavDropItems:has(.NavItem:nth-of-type(3)).Open
+                {
+                    height: 30vh;
+                }
+                .NavDropItems:has(.NavItem:nth-of-type(4)).Open
+                {
+                    height: 40vh;
+                }
+                .NavDropItems:has(.NavItem:nth-of-type(5)).Open
+                {
+                    height: 50vh;
+                }
+            .NavDropItems > .NavItem
+            {
+                height: 10vh !important;
+                width: 100% !important;
+            }
+                .NavDropBack
+                {
+                    display: none;
+                }
+                .NavDropArrow
+                {
+                    padding: 1vh;
+                    width: 1vh;
+                }
 
     /* Social items on nav bar */
         #NavSocialItems
@@ -374,32 +396,26 @@
         {
             background: rgb(240, 240, 240);
 
+            z-index: 10;
+
             top: 0;
             right: 0;
 
             width: 0;
-            height: 100%;
-
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            height: 100% !important;
 
             border: none;
             transition: width 1s;
         }
-            .NavDropItems::-webkit-scrollbar 
-            {
-                display: none;
-            }
             .NavDropItems.Open
             {
                 width: 100%;
-                height: 100%;
             }
                 .NavDropItems > .NavItem
                 {
                     height: 15vh !important;
                 }
-        .NavBack
+        .NavDropBack
         {
             color: rgb(var(--JDRed));
             font-weight: bold;
@@ -410,9 +426,16 @@
             padding: 5vh;
             cursor: pointer;
         }
+        .NavDropArrow
+        {
+            padding: 1vh;
+            width: 2vh;
+
+            transform: rotate(-90deg);
+        }
 
 
-        
+
 /* Form Styling */
     /* No mobile specific styling yet */
 

@@ -34,10 +34,10 @@
         <div id="NavItemContainer">
             <!-- Link 1 -->
             <div class="NavItem">
-                <a onclick="naviMenus(1)">link 1 +</a>
+                <a class="droptest" onclick="naviMenus(1)">link 1<img src="Assets/DropArrow.svg" class="NavDropArrow" aria-hidden="true"></a>
                 
                 <div id="TestMenu1" class="NavDropItems">
-                    <a class="NavBack" onclick="sweepAllMenus()">&lt;</a>
+                    <a class="NavDropBack" onclick="sweepAllMenus()">&lt;</a>
                     <div class="NavItem">
                         <a href="">link 1</a>
                     </div>
@@ -50,10 +50,10 @@
 
             <!-- Link 1 (Dropdown) -->
             <div class="NavItem">
-                <a onclick="naviMenus(0)">link 2 +</a>
+                <a onclick="naviMenus(0)">link 2<img src="Assets/DropArrow.svg" class="NavDropArrow" aria-hidden="true"></a>
                 
                 <div id="TestMenu" class="NavDropItems">
-                    <a class="NavBack" onclick="sweepAllMenus()">&lt;</a>
+                    <a class="NavDropBack" onclick="sweepAllMenus()">&lt;</a>
 
                     <div class="NavItem">
                         <a href="">link 1</a>
@@ -96,10 +96,10 @@
             <!-- Social Links -->
             <div id="NavSocialItems">
                 <a href="" aria-label="Socia Icons">
-                    <img src="Assets/FacebookLogo.svg" aria-label="Just Digital Facebook" alt="Just Digital Facebook">
+                    <img src="Assets/FacebookLogo.svg" aria-label="Just Digital Facebook" alt="Facebook">
                 </a>
                 <a href="">
-                    <img src="Assets/InstagramLogo.svg" aria-label="Just Digital Instagram" alt="Just Digital Instagram">
+                    <img src="Assets/InstagramLogo.svg" aria-label="Just Digital Instagram" alt="Instagram">
                 </a>
             </div>
 
@@ -115,7 +115,7 @@
             <div id="mainItems">
                 <h1 class="BrandFont Centre Narrow" aria-label="Take your brand to the next level.">
                     <span>Take your </span>
-                    <span class="BrandFont Bold JDRed">Brand </span>
+                    <span class="BrandFont Bold JDRed">brand </span>
                     <span>to the </span>
                     <span class="BrandFont Bold">next level.</span>
                 </h1>
@@ -125,7 +125,7 @@
                     <span class="BrandFont Bold JDRed">friendly, dynamic </span>
                     <span>and</span><br>
                     <span class="BrandFont Bold JDRed">resourceful experts </span>
-                    <span>exited to help<br>
+                    <span>excited to help<br>
                     elevate your brand.</span>
                 </h2>
                     <br>
@@ -234,7 +234,7 @@
         </div>
     </div>
 
-    <!-- Trusted By -->
+    <!-- Trusted By 
     <div class="Block">
         <h1 class="BrandFont Centre PadBottom">Trusted by</h1>
         <div class="BlockContent">
@@ -259,6 +259,24 @@
             </div>
             
         </div>
+    </div>-->
+
+    <!-- Trusted By ALT -->
+    <div class="Block">
+        <h1 class="BrandFont Centre PadBottom">Trusted by</h1>
+        <div class="BlockContent">
+
+            <div class="clientList">
+                <div>Client 1</div>
+                <div>Client 2</div>
+                <div>Client 3</div>
+                <div>Client 4</div>
+                <div>Client 5</div>
+                <div>Client 6</div>
+                <div>Client 7</div>
+            </div>
+
+        </div>
     </div>
 
     <!-- Invite us for coffee -->
@@ -281,7 +299,7 @@
 
                     <label class="BrandFont JDRed JDCheck" for="coffeeAgree" checked="checked">
                         <input required id="coffeeAgree" type="checkbox">
-                        <span aria-hidden="true" class="checkBox"><img src="Assets/JDBrand/JD_Checkbox_Mark.svg" alt="Checked"></span>
+                        <span aria-hidden="true" class="checkBox"><img src="Assets/JD_Checkbox_Mark.svg" alt="Checked"></span>
                         Agree to recive marketing emails from just digital.
                     </label>
 
@@ -294,8 +312,15 @@
 
 <!-- Footer -->
     <footer>
-        <div><img src="Assets/JDBrand/JD_white_map_MASTER.svg" style="width: 18vh;"></div>
-            <div>Social Icons</div>
+        <div><img src="Assets/JDBrand/JD_white_map_MASTER.svg" style="height: 2.5vh;"></div>
+            <div>
+                <a href=""  aria-label="Socia Icons">
+                    <img src="Assets/FacebookLogo - Inverted.svg" style="height: 2.5vh; padding-left: 1vh;" aria-label="Just Digital Facebook" alt="Facebook">
+                </a>
+                <a href="" >
+                    <img src="Assets/InstagramLogo - Inverted.svg" style="height: 2.5vh; padding-left: 1vh;" aria-label="Just Digital Instagram" alt="Instagram">
+                </a>
+            </div>
 
         <div>Just Digital Limited, Kingfisher Way, Hinchingbrooke Business Park, Huntingdon PE29 6FN</div>
             <div>Environmental Statement</div>

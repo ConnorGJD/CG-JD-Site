@@ -55,7 +55,7 @@
                             transform: translateX(-80vw);
                         }
                     }
-                    
+
 
     /* Add an empty div to mask over a background image inside other div */
         .BackgroundMask 
@@ -83,3 +83,21 @@
             }
         }
 
+        .clientList
+        {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+            .clientList > div
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 25vh;
+                height: 25vh;
+                background-color: darkgrey;
+                border-radius: 50%;
+                margin: 4vh; 
+            }
