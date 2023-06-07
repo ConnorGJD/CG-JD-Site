@@ -37,7 +37,11 @@
     #RingMaster
     {
         position: absolute;
-        background: rgb(var(--JDRed));
+        
+        background-image: url("../Assets/JDBrand/ColourWheel.jpg");
+        background-size: 100%;
+        background-position: center;
+        
         height: 100%; 
         width: 100%;
 
